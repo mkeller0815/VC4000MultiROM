@@ -58,7 +58,7 @@ static unsigned char rom[] = {{
             current_line = []
 
             for byte in bytes:
-                current_line.append(format(byte, '#04x'))
+                current_line.append(format(byte, '#04x'))  # Format as '0xYY'
 
             rom_lines.append(', '.join(current_line))
 
@@ -72,7 +72,7 @@ static unsigned char rom[] = {{
                 outfile.write('    ')  # Indentation.
                 outfile.write(line)
 
-                # All lines except the last need continuation with 'c':
+                # All lines except the last need continuation with ',':
                 if nr < len(rom_lines) - 1:
                     outfile.write(',')
 
