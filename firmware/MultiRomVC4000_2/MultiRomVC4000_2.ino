@@ -143,6 +143,11 @@ prog_uchar romImage[] PROGMEM  = {
 
 #define OEVCBUS 6
 
+#define CE1SRAM 7
+#define CE2SRAM 8
+
+#define LED 13
+
 void setup() {
  pinMode(CLOCK,OUTPUT); 
  pinMode(LATCH,OUTPUT); 
@@ -151,38 +156,32 @@ void setup() {
  pinMode(OEDATA,OUTPUT);
  pinMode(OEADDRESS,OUTPUT);
  pinMode(OEVCBUS,OUTPUT);
+ pinMode(LED,OUTPUT);
 
  disableVCBus();
+ enableSRAM();
  
  Serial.begin(9600);
  delay(100);
  
 
  Serial.println("writing data");
+ enableSRAM();
  for (int i=0;i<=ROMSIZE;i++) {
     write2RAM(i,(byte)romImage[i]);
  }
- /**
- Serial.println("reading data:");
- for (int i=0;i<=255;i++) {
-    byte d = readRAM(i);
-    if(d<16) Serial.print("0");
-    Serial.print(d,HEX); 
-    Serial.print(" ");
-    if(i%15==0) Serial.println();
-   
- }
-/**
- for(int i=0;i<256;i++) {
- write2RAM(0,i);
- Serial.println(readRAM(0),HEX);
- }
- **/
+ disableSRAM();
+ 
  Serial.println("done");
  Serial.println("enable bus to VC4000");
  enableVCBus();
  
- while(1) {};
+ while(1) {
+    digitalWrite(LED,HIGH);
+    delay(300);
+    digitalWrite(LED,LOW);
+    delay(300);
+ };
 }
 
 
@@ -191,6 +190,20 @@ void setup() {
 void loop() {
   
 }
+
+void enableSRAM() {
+ pinMode(CE1SRAM,OUTPUT);
+ pinMode(CE2SRAM,OUTPUT);
+ digitalWrite(CE1SRAM,LOW);
+ digitalWrite(CE2SRAM,HIGH);
+  
+}
+
+void disableSRAM() {
+ pinMode(CE1SRAM,INPUT);
+ pinMode(CE2SRAM,INPUT);
+}
+
 
 void disableVCBus() {
   digitalWrite(WR, HIGH);
@@ -214,23 +227,6 @@ void write2RAM(unsigned int address, byte data) {
   digitalWrite(WR,LOW);
   //delay(5);
   digitalWrite(WR,HIGH);
- 
-}
-
-byte readRAM(unsigned int address) {
-  digitalWrite(OEDATA,HIGH);
-  digitalWrite(OEADDRESS,LOW);
-  digitalWrite(WR,HIGH);
-  shiftout(address,0);
-  delay(1);
- return ((digitalRead(13) << 7) +
-      (digitalRead(12) << 6) +
-      (digitalRead(11) << 5) +
-      (digitalRead(10) << 4) +
-      (digitalRead(9) << 3) +
-      (digitalRead(8) << 2) +
-      (digitalRead(7) << 1) +
-       digitalRead(6));
 }
 
 void shiftout(unsigned int address, byte data) {
@@ -243,6 +239,6 @@ void shiftout(unsigned int address, byte data) {
   shiftOut(DATA,CLOCK,MSBFIRST,highbyte);
   shiftOut(DATA,CLOCK,MSBFIRST,lowbyte);
   digitalWrite(LATCH,HIGH);
-  delay(10);
+  delay(1);
   digitalWrite(LATCH,LOW);
 }
