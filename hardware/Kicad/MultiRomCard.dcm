@@ -1,0 +1,17 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 6264
+D SRAM 8K x 8
+K SRAM 8Kx8
+$ENDCMP
+#
+$CMP Arduino_UNO
+D Arduino UNO R3 with Atmega 328
+$ENDCMP
+#
+$CMP VC4000_Cartridge_Bus
+D VC4000 Cartridge Bus
+K Module Slot
+$ENDCMP
+#
+#End Doc Library
