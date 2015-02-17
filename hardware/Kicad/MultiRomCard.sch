@@ -1185,7 +1185,6 @@ Wire Wire Line
 	7950 2750 8050 2750
 Wire Wire Line
 	7950 4150 8050 4150
-Connection ~ 7950 2750
 Wire Wire Line
 	2200 3600 2300 3600
 Text GLabel 2300 3700 2    60   Output ~ 0
