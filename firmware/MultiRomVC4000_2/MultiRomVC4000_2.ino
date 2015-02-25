@@ -133,13 +133,13 @@ prog_uchar romImage[] PROGMEM  = {
 0x0c, 0x14, 0x12, 0x10, 0x0f, 0x0c, 0x14, 0x12, 0x10, 0x0f, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-#define CLOCK 4
-#define LATCH 3
-#define DATA  5
+#define CLOCK 4    //SRCLK
+#define LATCH 3    //RCLK
+#define DATA  5    //SER
 
 #define WR    2
-#define OEDATA    A0
-#define OEADDRESS A1
+#define OEDATA    A0  //_G DATA BUS
+#define OEADDRESS A1  //_G ADDRESS BUS
 
 #define OEVCBUS 6
 
@@ -200,8 +200,10 @@ void enableSRAM() {
 }
 
 void disableSRAM() {
- pinMode(CE1SRAM,INPUT);
+ pinMode(CE1SRAM,INPUT);  
  pinMode(CE2SRAM,INPUT);
+ digitalWrite(CE1SRAM,LOW);
+ digitalWrite(CE2SRAM,LOW);
 }
 
 
