@@ -900,21 +900,21 @@ Wire Wire Line
 Wire Wire Line
 	3050 5150 3450 5150
 Connection ~ 3050 4000
-Text GLabel 6750 3650 0    60   Input ~ 0
+Text GLabel 6750 3650 0    48   Input ~ 0
 WESRAM
-Text GLabel 2300 4100 2    60   Output ~ 0
+Text GLabel 2300 4100 2    48   Output ~ 0
 WESRAM
 Wire Wire Line
 	2200 4100 2300 4100
-Text GLabel 2300 3600 2    60   Output ~ 0
+Text GLabel 2300 3600 2    48   Output ~ 0
 CE1SRAM
-Text GLabel 2300 3500 2    60   Output ~ 0
+Text GLabel 2300 3500 2    48   Output ~ 0
 CE2SRAM
 Wire Wire Line
 	2200 3500 2300 3500
-Text GLabel 6750 3750 0    60   Input ~ 0
+Text GLabel 6750 3750 0    48   Input ~ 0
 CE1SRAM
-Text GLabel 6750 3850 0    60   Input ~ 0
+Text GLabel 6750 3850 0    48   Input ~ 0
 CE2SRAM
 NoConn ~ 2200 4300
 NoConn ~ 2200 4200
@@ -974,19 +974,19 @@ Wire Wire Line
 	7950 4150 8050 4150
 Wire Wire Line
 	2200 3600 2300 3600
-Text GLabel 2300 3700 2    60   Output ~ 0
+Text GLabel 2300 3700 2    48   Output ~ 0
 OEVCBUS
 Wire Wire Line
 	2300 3700 2200 3700
-Text GLabel 7900 4250 0    60   Input ~ 0
+Text GLabel 7900 4250 0    48   Input ~ 0
 OEVCBUS
 Wire Wire Line
 	7900 4250 8050 4250
-Text GLabel 7900 5650 0    60   Input ~ 0
+Text GLabel 7900 5650 0    48   Input ~ 0
 OEVCBUS
 Wire Wire Line
 	7900 5650 8050 5650
-Text GLabel 7900 2850 0    60   Input ~ 0
+Text GLabel 7900 2850 0    48   Input ~ 0
 OEVCBUS
 Wire Wire Line
 	7900 2850 8050 2850
