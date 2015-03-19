@@ -702,11 +702,7 @@ Wire Wire Line
 Wire Wire Line
 	6750 3050 6950 3050
 Wire Wire Line
-	6950 2850 6950 3750
-Wire Wire Line
-	6750 2950 7050 2950
-Wire Wire Line
-	7050 2950 7050 3850
+	6950 2850 6950 3850
 Wire Bus Line
 	7300 2050 7300 5550
 Wire Wire Line
@@ -913,9 +909,9 @@ CE2SRAM
 Wire Wire Line
 	2200 3500 2300 3500
 Text GLabel 6750 3750 0    48   Input ~ 0
-CE1SRAM
-Text GLabel 6750 3850 0    48   Input ~ 0
 CE2SRAM
+Text GLabel 6750 3850 0    48   Input ~ 0
+CE1SRAM
 NoConn ~ 2200 4300
 NoConn ~ 2200 4200
 NoConn ~ 2200 3400
@@ -1025,7 +1021,6 @@ Wire Wire Line
 	6750 3750 8050 3750
 Wire Wire Line
 	6750 3850 8050 3850
-Connection ~ 7050 3850
 $Comp
 L GND #PWR07
 U 1 1 54DB8BDD
@@ -1041,7 +1036,6 @@ Wire Wire Line
 	9550 3650 9550 4000
 Wire Wire Line
 	9550 3850 9450 3850
-Connection ~ 6950 3750
 Wire Wire Line
 	9450 3750 10350 3750
 Wire Wire Line
@@ -1073,4 +1067,12 @@ F 3 "" H 1550 4500 60  0000 C CNN
 	1    1550 4500
 	1    0    0    -1  
 $EndComp
+Connection ~ 6950 3850
+Wire Wire Line
+	6750 2950 7100 2950
+Wire Wire Line
+	7100 2950 7100 3750
+Connection ~ 7100 3750
+Text Notes 10000 3750 0    60   ~ 0
+"CE2"
 $EndSCHEMATC
