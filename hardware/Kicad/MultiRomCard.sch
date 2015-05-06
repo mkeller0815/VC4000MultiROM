@@ -10,7 +10,6 @@ LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
-LIBS:special
 LIBS:microcontrollers
 LIBS:dsp
 LIBS:microchip
@@ -280,11 +279,11 @@ Entry Wire Line
 Entry Wire Line
 	7400 3250 7500 3350
 Entry Wire Line
-	7400 3350 7500 3450
-Entry Wire Line
 	7400 3450 7500 3550
 Entry Wire Line
 	7400 3550 7500 3650
+Entry Wire Line
+	7400 3650 7500 3750
 Text Label 7750 2400 0    60   ~ 0
 A0
 Text Label 7750 2300 0    60   ~ 0
@@ -305,11 +304,11 @@ Text Label 7700 3250 0    60   ~ 0
 A8
 Text Label 7700 3350 0    60   ~ 0
 A9
-Text Label 7700 3450 0    60   ~ 0
-A10
 Text Label 7700 3550 0    60   ~ 0
-A11
+A10
 Text Label 7700 3650 0    60   ~ 0
+A11
+Text Label 7700 3750 0    60   ~ 0
 A12
 NoConn ~ 8050 3950
 $Comp
@@ -409,9 +408,9 @@ Entry Wire Line
 Entry Wire Line
 	9700 3350 9800 3250
 Entry Wire Line
-	9700 3450 9800 3350
-Entry Wire Line
 	9700 3550 9800 3450
+Entry Wire Line
+	9700 3650 9800 3550
 Entry Wire Line
 	10100 2450 10200 2550
 Entry Wire Line
@@ -456,9 +455,9 @@ Text Label 9450 3250 0    60   ~ 0
 EA8
 Text Label 9450 3350 0    60   ~ 0
 EA9
-Text Label 9450 3450 0    60   ~ 0
-EA10
 Text Label 9450 3550 0    60   ~ 0
+EA10
+Text Label 9450 3650 0    60   ~ 0
 EA11
 Entry Wire Line
 	9650 4650 9750 4750
@@ -790,10 +789,6 @@ Wire Wire Line
 Wire Wire Line
 	7500 3350 8050 3350
 Wire Wire Line
-	7500 3450 8050 3450
-Wire Wire Line
-	7500 3550 8050 3550
-Wire Wire Line
 	7500 2400 8050 2400
 Wire Wire Line
 	7500 2300 8050 2300
@@ -809,10 +804,8 @@ Wire Wire Line
 	7500 1800 8050 1800
 Wire Wire Line
 	7500 1700 8050 1700
-Wire Wire Line
-	7500 3650 8050 3650
 Wire Bus Line
-	7400 1500 7400 3550
+	7400 1500 7400 3650
 Wire Wire Line
 	6750 3150 6850 3150
 Wire Wire Line
@@ -893,10 +886,6 @@ Wire Wire Line
 	9450 3250 9700 3250
 Wire Wire Line
 	9450 3350 9700 3350
-Wire Wire Line
-	9450 3450 9700 3450
-Wire Wire Line
-	9450 3550 9700 3550
 Wire Bus Line
 	5150 1500 7400 1500
 Wire Wire Line
@@ -926,7 +915,7 @@ Wire Bus Line
 Wire Bus Line
 	10100 1500 9800 1500
 Wire Bus Line
-	9800 1500 9800 3450
+	9800 1500 9800 3550
 Wire Wire Line
 	9450 4650 9650 4650
 Wire Wire Line
@@ -1048,23 +1037,17 @@ Wire Wire Line
 Wire Wire Line
 	6850 3650 6750 3650
 Wire Wire Line
-	6750 3750 8050 3750
-Wire Wire Line
 	6750 3850 8050 3850
 Wire Wire Line
-	9550 3650 9550 4000
+	9550 3750 9550 4000
 Wire Wire Line
 	9550 3850 9450 3850
-Wire Wire Line
-	9450 3750 10550 3750
 Wire Wire Line
 	10550 3550 10450 3550
 Wire Wire Line
 	10450 3550 10450 3650
 Wire Wire Line
 	10450 3650 10550 3650
-Wire Wire Line
-	9450 3650 9550 3650
 Connection ~ 9550 3850
 Wire Bus Line
 	5050 5550 7800 5550
@@ -1073,7 +1056,6 @@ Wire Wire Line
 	6750 2950 7050 2950
 Wire Wire Line
 	7050 2950 7050 3750
-Connection ~ 7050 3750
 Wire Wire Line
 	10350 2050 10550 2050
 Wire Wire Line
@@ -1099,4 +1081,39 @@ Wire Wire Line
 	9500 2950 9500 2900
 Wire Wire Line
 	9450 3050 9500 3050
+Wire Wire Line
+	7050 3750 6750 3750
+Wire Wire Line
+	8050 3750 7500 3750
+Wire Wire Line
+	8050 3650 7500 3650
+Wire Wire Line
+	7500 3550 8050 3550
+Wire Wire Line
+	9550 3750 9450 3750
+Wire Wire Line
+	9450 3650 9700 3650
+Wire Wire Line
+	9450 3550 9700 3550
+Wire Wire Line
+	10550 3750 10250 3750
+Wire Wire Line
+	10250 3750 10250 3550
+Wire Wire Line
+	10250 3550 9950 3550
+Wire Wire Line
+	9950 3550 9950 3400
+Wire Wire Line
+	9950 3400 9700 3400
+Wire Wire Line
+	9700 3400 9700 3450
+Wire Wire Line
+	9700 3450 9450 3450
+Wire Wire Line
+	8050 3450 7500 3450
+Wire Wire Line
+	7500 3450 7500 3400
+Wire Wire Line
+	7500 3400 7050 3400
+Connection ~ 7050 3400
 $EndSCHEMATC
