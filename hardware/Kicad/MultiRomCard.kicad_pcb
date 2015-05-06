@@ -3,7 +3,7 @@
   (general
     (links 111)
     (no_connects 111)
-    (area 65.949999 48.449999 226.050001 148.550001)
+    (area 65.134999 48.449999 226.050001 155.655001)
     (thickness 1.6)
     (drawings 8)
     (tracks 0)
@@ -37,15 +37,15 @@
   )
 
   (setup
-    (last_trace_width 1)
-    (trace_clearance 0.75)
+    (last_trace_width 0.75)
+    (trace_clearance 0.5)
     (zone_clearance 0.508)
     (zone_45_only no)
     (trace_min 0.254)
     (segment_width 0.2)
     (edge_width 0.1)
-    (via_size 0.889)
-    (via_drill 0.635)
+    (via_size 1.5)
+    (via_drill 0.75)
     (via_min_size 0.889)
     (via_min_drill 0.508)
     (uvia_size 0.508)
@@ -176,10 +176,10 @@
   (net 83 "Net-(U7-Pad18)")
 
   (net_class Default "This is the default net class."
-    (clearance 0.75)
-    (trace_width 1)
-    (via_dia 0.889)
-    (via_drill 0.635)
+    (clearance 0.5)
+    (trace_width 0.75)
+    (via_dia 1.5)
+    (via_drill 0.75)
     (uvia_dia 0.508)
     (uvia_drill 0.127)
     (add_net /A0)
@@ -428,7 +428,7 @@
   )
 
   (module Housings_DIP:DIP-16__300_ELL (layer F.Cu) (tedit 0) (tstamp 553938F3)
-    (at 151.4 62.2 90)
+    (at 135.49 63.95 90)
     (descr "16 pins DIL package, elliptical pads")
     (tags DIL)
     (path /54871FDF)
@@ -486,7 +486,7 @@
   )
 
   (module Housings_DIP:DIP-16__300_ELL (layer F.Cu) (tedit 0) (tstamp 55393907)
-    (at 151.13 96.52 270)
+    (at 135.09 95.05 270)
     (descr "16 pins DIL package, elliptical pads")
     (tags DIL)
     (path /54872016)
@@ -544,7 +544,7 @@
   )
 
   (module Housings_DIP:DIP-16__300_ELL (layer F.Cu) (tedit 0) (tstamp 5539391B)
-    (at 151.13 124.46 90)
+    (at 135.09 122.91 90)
     (descr "16 pins DIL package, elliptical pads")
     (tags DIL)
     (path /5487203D)
@@ -602,7 +602,7 @@
   )
 
   (module Housings_DIP:DIP-28__600_ELL (layer F.Cu) (tedit 553CFAF1) (tstamp 5539393B)
-    (at 175.26 95.25 270)
+    (at 164.3 92.6 270)
     (descr "28 pins DIL package, elliptical pads, width 600mil")
     (tags DIL)
     (path /54D63FC2)
@@ -684,7 +684,7 @@
   )
 
   (module Housings_DIP:DIP-20__300_ELL (layer F.Cu) (tedit 0) (tstamp 55393953)
-    (at 199.39 67.31 90)
+    (at 191.3 66.7 90)
     (descr "20 pins DIL package, elliptical pads")
     (tags DIL)
     (path /54D634ED)
@@ -749,7 +749,7 @@
   )
 
   (module Housings_DIP:DIP-20__300_ELL (layer F.Cu) (tedit 0) (tstamp 5539396B)
-    (at 199.39 97.79 90)
+    (at 191.39 97.19 90)
     (descr "20 pins DIL package, elliptical pads")
     (tags DIL)
     (path /54D63519)
@@ -814,7 +814,7 @@
   )
 
   (module Housings_DIP:DIP-20__300_ELL (layer F.Cu) (tedit 0) (tstamp 55393983)
-    (at 199.39 129.54 90)
+    (at 191.51 127.75 90)
     (descr "20 pins DIL package, elliptical pads")
     (tags DIL)
     (path /54D63544)
