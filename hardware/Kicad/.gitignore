@@ -1,4 +1,5 @@
 # Kicad temporary files #
 #########################
 *.bak
+*-bak
 *.bck
