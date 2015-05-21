@@ -4,8 +4,9 @@ Kicad Project for the MultiRom Cartridge
 You need a recent build of the Kicad “product” branch on Launchpad to open the
 project. The current “stable” version will not work. Instructions on how to
 install the Kicad “product” branch without compiling it yourself can be found
-[on the official Kicad website] for GNU/Linux, Mac OSX and Windows.
-(http://www.kicad-pcb.org/display/KICAD/Installing+KiCad)
+[on the official Kicad website]
+(http://www.kicad-pcb.org/display/KICAD/Installing+KiCad) for GNU/Linux, Mac OSX
+and Windows.
 
 The MultiRomCard-cache.lib is included here for convenience. If you have the
 Kicad standard symbol libraries installed, you do not need this file. Currently,
