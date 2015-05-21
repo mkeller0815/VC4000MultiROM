@@ -1,8 +1,11 @@
 Kicad Project for the MultiRom Cartridge
 ========================================
 
-You need a recent build of the Kicad "product" branch on Launchpad to open the
-project. The current "stable" version will not work.
+You need a recent build of the Kicad “product” branch on Launchpad to open the
+project. The current “stable” version will not work. Instructions on how to
+install the Kicad “product” branch without compiling it yourself can be found
+[on the official Kicad website] for GNU/Linux, Mac OSX and Windows.
+(http://www.kicad-pcb.org/display/KICAD/Installing+KiCad)
 
 The MultiRomCard-cache.lib is included here for convenience. If you have the
 Kicad standard symbol libraries installed, you do not need this file. Currently,
@@ -11,3 +14,9 @@ the only items from the standard libraries are the schematic symbols for the
 symbols are custom made and included in MultiRomCard.lib.
 
 ![Schematic] (https://rawgithub.com/mkeller0815/flappy4000/master/MultiRom/hardware/Kicad/MultiRomCard.svg)
+
+The current PCB is a first attempt to test the circuit in a more controlled
+environment than on a breadboard (where it did not work!). So be warned, it is
+*not* finished, yet!
+
+![PCB] (https://rawgithub.com/mkeller0815/flappy4000/master/MultiRom/hardware/Kicad/MultiRomCard-brd.svg)
