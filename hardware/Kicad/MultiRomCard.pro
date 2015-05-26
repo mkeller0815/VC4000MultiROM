@@ -1,4 +1,4 @@
-update=Mittwoch, 06. Mai 2015 13:25:25
+update=Dienstag, 26. Mai 2015 14:11:40
 version=1
 last_client=kicad
 [cvpcb]
@@ -6,8 +6,6 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -72,3 +70,5 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=MultiRomCard
+[general]
+version=1
