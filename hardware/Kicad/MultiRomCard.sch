@@ -35,9 +35,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "MultiRom Cartridge for Interton VC4000"
+Title "Interton VC4000 MultiRom Cartridge"
 Date "Saturday, June 20, 2015"
-Rev "V1"
+Rev "0.1"
 Comp "Mario Keller and Johannes Maibaum"
 Comment1 ""
 Comment2 ""
