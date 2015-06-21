@@ -36,7 +36,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Interton VC4000 MultiRom Cartridge"
-Date "Saturday, June 20, 2015"
+Date "Sunday, June 21, 2015"
 Rev "0.1"
 Comp "Mario Keller and Johannes Maibaum"
 Comment1 ""
@@ -564,7 +564,7 @@ L Arduino_UNO U1
 U 1 1 54D6E609
 P 1550 3650
 F 0 "U1" H 1100 4400 60  0000 C CNN
-F 1 "Arduino_UNO" H 1850 2900 60  0000 C CNN
+F 1 "Arduino_UNO" H 2000 2900 60  0000 C CNN
 F 2 "VC4000_MultiRom:Arduino_UNO" H 1550 3500 60  0001 C CNN
 F 3 "" H 1550 3500 60  0000 C CNN
 	1    1550 3650
@@ -676,12 +676,12 @@ NoConn ~ 900  4300
 $Comp
 L GND #PWR08
 U 1 1 54D739DD
-P 1550 4500
-F 0 "#PWR08" H 1550 4500 30  0001 C CNN
-F 1 "GND" H 1550 4430 30  0001 C CNN
-F 2 "" H 1550 4500 60  0000 C CNN
-F 3 "" H 1550 4500 60  0000 C CNN
-	1    1550 4500
+P 1550 4600
+F 0 "#PWR08" H 1550 4600 30  0001 C CNN
+F 1 "GND" H 1550 4530 30  0001 C CNN
+F 2 "" H 1550 4600 60  0000 C CNN
+F 3 "" H 1550 4600 60  0000 C CNN
+	1    1550 4600
 	1    0    0    -1  
 $EndComp
 Text Notes 10200 3750 0    60   ~ 0
@@ -708,6 +708,111 @@ F 3 "" H 9450 1500 60  0000 C CNN
 	1    9450 1500
 	1    0    0    -1  
 $EndComp
+Entry Wire Line
+	10100 4750 10200 4650
+Entry Wire Line
+	7400 2100 7500 2200
+$Comp
+L C C1
+U 1 1 55855363
+P 8300 6050
+F 0 "C1" H 8325 6150 50  0000 L CNN
+F 1 ".1uF" H 8325 5950 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 8338 5900 30  0001 C CNN
+F 3 "" H 8300 6050 60  0000 C CNN
+	1    8300 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C2
+U 1 1 558556DE
+P 8600 6050
+F 0 "C2" H 8625 6150 50  0000 L CNN
+F 1 ".1uF" H 8625 5950 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 8638 5900 30  0001 C CNN
+F 3 "" H 8600 6050 60  0000 C CNN
+	1    8600 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C3
+U 1 1 55855710
+P 8900 6050
+F 0 "C3" H 8925 6150 50  0000 L CNN
+F 1 ".1uF" H 8925 5950 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 8938 5900 30  0001 C CNN
+F 3 "" H 8900 6050 60  0000 C CNN
+	1    8900 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C4
+U 1 1 55855748
+P 9200 6050
+F 0 "C4" H 9225 6150 50  0000 L CNN
+F 1 ".1uF" H 9225 5950 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 9238 5900 30  0001 C CNN
+F 3 "" H 9200 6050 60  0000 C CNN
+	1    9200 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C5
+U 1 1 55855787
+P 9500 6050
+F 0 "C5" H 9525 6150 50  0000 L CNN
+F 1 ".1uF" H 9525 5950 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 9538 5900 30  0001 C CNN
+F 3 "" H 9500 6050 60  0000 C CNN
+	1    9500 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C6
+U 1 1 558557C4
+P 9800 6050
+F 0 "C6" H 9825 6150 50  0000 L CNN
+F 1 ".1uF" H 9825 5950 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 9838 5900 30  0001 C CNN
+F 3 "" H 9800 6050 60  0000 C CNN
+	1    9800 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C7
+U 1 1 55855806
+P 10100 6050
+F 0 "C7" H 10125 6150 50  0000 L CNN
+F 1 ".1uF" H 10125 5950 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 10138 5900 30  0001 C CNN
+F 3 "" H 10100 6050 60  0000 C CNN
+	1    10100 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 558564D3
+P 8100 6200
+F 0 "#PWR011" H 8100 6200 30  0001 C CNN
+F 1 "GND" H 8100 6130 30  0001 C CNN
+F 2 "" H 8100 6200 60  0000 C CNN
+F 3 "" H 8100 6200 60  0000 C CNN
+	1    8100 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR012
+U 1 1 5585650E
+P 8100 5900
+F 0 "#PWR012" H 8100 6000 30  0001 C CNN
+F 1 "VCC" H 8100 6050 30  0000 C CNN
+F 2 "" H 8100 5900 60  0000 C CNN
+F 3 "" H 8100 5900 60  0000 C CNN
+	1    8100 5900
+	1    0    0    -1  
+$EndComp
+Text Notes 8550 5800 0    60   ~ 0
+IC Power Decoupling Caps
 Wire Wire Line
 	4950 3000 3350 3000
 Wire Wire Line
@@ -949,7 +1054,7 @@ Wire Wire Line
 Wire Wire Line
 	10450 3250 10550 3250
 Wire Bus Line
-	9750 5550 10100 5550
+	10100 5550 9750 5550
 Wire Wire Line
 	2200 3800 2850 3800
 Wire Wire Line
@@ -965,16 +1070,16 @@ Wire Wire Line
 Wire Wire Line
 	800  3900 900  3900
 Wire Wire Line
-	3150 4650 800  4650
+	3150 4750 800  4750
 Wire Wire Line
-	3150 2450 3150 4650
+	3150 2450 3150 4750
 Wire Wire Line
 	3150 3850 3450 3850
 Wire Wire Line
 	3150 2450 3450 2450
 Connection ~ 3150 3850
 Wire Wire Line
-	800  4650 800  3900
+	800  4750 800  3900
 Wire Wire Line
 	2950 3900 2200 3900
 Wire Wire Line
@@ -1069,14 +1174,10 @@ Wire Wire Line
 	9550 4300 9550 4450
 Wire Wire Line
 	9550 4450 9450 4450
-Entry Wire Line
-	10100 4750 10200 4650
 Wire Bus Line
-	10100 5550 10100 4150
+	10100 4150 10100 5550
 Wire Wire Line
 	9500 2950 9450 2950
-Entry Wire Line
-	7400 2100 7500 2200
 Wire Wire Line
 	9500 2950 9500 2900
 Wire Wire Line
@@ -1116,83 +1217,6 @@ Wire Wire Line
 Wire Wire Line
 	7500 3400 7050 3400
 Connection ~ 7050 3400
-$Comp
-L C C1
-U 1 1 55855363
-P 8300 6050
-F 0 "C1" H 8325 6150 50  0000 L CNN
-F 1 ".1uF" H 8325 5950 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 8338 5900 30  0001 C CNN
-F 3 "" H 8300 6050 60  0000 C CNN
-	1    8300 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C2
-U 1 1 558556DE
-P 8600 6050
-F 0 "C2" H 8625 6150 50  0000 L CNN
-F 1 ".1uF" H 8625 5950 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 8638 5900 30  0001 C CNN
-F 3 "" H 8600 6050 60  0000 C CNN
-	1    8600 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C3
-U 1 1 55855710
-P 8900 6050
-F 0 "C3" H 8925 6150 50  0000 L CNN
-F 1 ".1uF" H 8925 5950 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 8938 5900 30  0001 C CNN
-F 3 "" H 8900 6050 60  0000 C CNN
-	1    8900 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C4
-U 1 1 55855748
-P 9200 6050
-F 0 "C4" H 9225 6150 50  0000 L CNN
-F 1 ".1uF" H 9225 5950 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 9238 5900 30  0001 C CNN
-F 3 "" H 9200 6050 60  0000 C CNN
-	1    9200 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C5
-U 1 1 55855787
-P 9500 6050
-F 0 "C5" H 9525 6150 50  0000 L CNN
-F 1 ".1uF" H 9525 5950 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 9538 5900 30  0001 C CNN
-F 3 "" H 9500 6050 60  0000 C CNN
-	1    9500 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C6
-U 1 1 558557C4
-P 9800 6050
-F 0 "C6" H 9825 6150 50  0000 L CNN
-F 1 ".1uF" H 9825 5950 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 9838 5900 30  0001 C CNN
-F 3 "" H 9800 6050 60  0000 C CNN
-	1    9800 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C7
-U 1 1 55855806
-P 10100 6050
-F 0 "C7" H 10125 6150 50  0000 L CNN
-F 1 ".1uF" H 10125 5950 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 10138 5900 30  0001 C CNN
-F 3 "" H 10100 6050 60  0000 C CNN
-	1    10100 6050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8100 5900 10100 5900
 Connection ~ 8600 5900
@@ -1207,30 +1231,15 @@ Connection ~ 8900 6200
 Connection ~ 9200 6200
 Connection ~ 9500 6200
 Connection ~ 9800 6200
-$Comp
-L GND #PWR011
-U 1 1 558564D3
-P 8100 6200
-F 0 "#PWR011" H 8100 6200 30  0001 C CNN
-F 1 "GND" H 8100 6130 30  0001 C CNN
-F 2 "" H 8100 6200 60  0000 C CNN
-F 3 "" H 8100 6200 60  0000 C CNN
-	1    8100 6200
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR012
-U 1 1 5585650E
-P 8100 5900
-F 0 "#PWR012" H 8100 6000 30  0001 C CNN
-F 1 "VCC" H 8100 6050 30  0000 C CNN
-F 2 "" H 8100 5900 60  0000 C CNN
-F 3 "" H 8100 5900 60  0000 C CNN
-	1    8100 5900
-	1    0    0    -1  
-$EndComp
 Connection ~ 8300 5900
 Connection ~ 8300 6200
-Text Notes 8550 5800 0    60   ~ 0
-IC Power Decoupling Caps
+Wire Wire Line
+	1400 4500 1400 4550
+Wire Wire Line
+	1400 4550 1700 4550
+Wire Wire Line
+	1550 4500 1550 4600
+Wire Wire Line
+	1700 4550 1700 4500
+Connection ~ 1550 4550
 $EndSCHEMATC
