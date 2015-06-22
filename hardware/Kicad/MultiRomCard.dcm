@@ -9,6 +9,11 @@ $CMP Arduino_UNO
 D Arduino UNO R3 with Atmega 328
 $ENDCMP
 #
+$CMP MicroSD_Breakout
+D MicroSD Card Breakout Board (Arduino Compatible)
+K microsd, sd, arduino, adafruit
+$ENDCMP
+#
 $CMP VC4000_Cartridge_Bus
 D VC4000 Cartridge Bus
 K Module Slot
