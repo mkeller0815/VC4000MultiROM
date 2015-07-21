@@ -2,7 +2,7 @@
 
 #define ROMSIZE 2048
 
-const byte romImage[] PROGMEM = { 
+const byte romImage[] PROGMEM = {
 0x1f, 0x00, 0x20, 0x17, 0x06, 0x20, 0x0e, 0x47, 0xa3, 0xce, 0x7f, 0x80, 0x5a, 0x78, 0x17, 0x05,
 0xf6, 0x0e, 0x26, 0xca, 0xcd, 0x7e, 0x0a, 0x0f, 0x26, 0xca, 0xcd, 0x7e, 0x1a, 0xd9, 0x72, 0x17,
 0x20, 0xc3, 0xcf, 0x5f, 0x00, 0x5b, 0x7b, 0x92, 0xcc, 0x5e, 0xc9, 0xcc, 0x1f, 0x0f, 0x04, 0x02,
@@ -138,8 +138,8 @@ const byte romImage[] PROGMEM = {
 #define DATA  5    //SER
 
 #define WR    2
-#define OEDATA    A0  //_G DATA BUS
-#define OEADDRESS A1  //_G ADDRESS BUS
+#define OEDATA    A1  //_G DATA BUS
+#define OEADDRESS A0  //_G ADDRESS BUS
 
 #define OEVCBUS 6
 
@@ -160,35 +160,27 @@ void setup() {
 
  disableVCBus();
  enableSRAM();
- 
+
  Serial.begin(9600);
  delay(100);
- 
 
  Serial.println("writing data");
  enableSRAM();
- for (int i=0;i<=ROMSIZE;i++) {
+ for (int i=0;i<ROMSIZE;i++) {
     write2RAM(i,pgm_read_byte(romImage+i));
  }
  disableSRAM();
- 
+
  Serial.println("done");
  Serial.println("enable bus to VC4000");
  enableVCBus();
- 
- while(1) {
-    digitalWrite(LED,HIGH);
-    delay(300);
-    digitalWrite(LED,LOW);
-    delay(300);
- };
 }
 
-
-
-
 void loop() {
-  
+  digitalWrite(LED,HIGH);
+  delay(300);
+  digitalWrite(LED,LOW);
+  delay(300);
 }
 
 void enableSRAM() {
@@ -196,14 +188,17 @@ void enableSRAM() {
  pinMode(CE2SRAM,OUTPUT);
  digitalWrite(CE1SRAM,LOW);
  digitalWrite(CE2SRAM,HIGH);
-  
 }
 
 void disableSRAM() {
- pinMode(CE1SRAM,INPUT);  
- pinMode(CE2SRAM,INPUT);
+  // Ensure that CE1+2 are in LOW state before turning them OFF.
+  // Switching them to INPUT mode while in HIGH state will
+  // activate the internal pullup resistors to VCC (which is a
+  // bad idea!).
  digitalWrite(CE1SRAM,LOW);
  digitalWrite(CE2SRAM,LOW);
+ pinMode(CE1SRAM,INPUT);
+ pinMode(CE2SRAM,INPUT);
 }
 
 
@@ -227,15 +222,13 @@ void write2RAM(unsigned int address, byte data) {
   digitalWrite(WR,HIGH);
   shiftout(address,data);
   digitalWrite(WR,LOW);
-  //delay(5);
   digitalWrite(WR,HIGH);
 }
 
 void shiftout(unsigned int address, byte data) {
-  
   byte lowbyte = address & 0xff;
   byte highbyte = address >> 8;
-  
+
   digitalWrite(LATCH,LOW);
   shiftOut(DATA,CLOCK,MSBFIRST,data);
   shiftOut(DATA,CLOCK,MSBFIRST,highbyte);
