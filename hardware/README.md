@@ -1,9 +1,23 @@
-VC4000 MultiROM module - hardware part
-======================================
+Hardware files for the MultiRom Cartridge
+=========================================
 
-## 1.0  Files
+You need a recent build of the Kicad “product” branch on Launchpad to open the
+project. The current “stable” version will not work. Instructions on how to
+install the Kicad “product” branch without compiling it yourself can be found
+[on the official Kicad website]
+(http://www.kicad-pcb.org/display/KICAD/Installing+KiCad) for GNU/Linux, Mac
+OSX and Windows.
 
- - ROMCardPrototype    - DipTrace PCB for a VC4000 ROM Cartridge Prototype Board
- - Kicad               - Kicad Project for the final Multi ROM Cartridge Board
+The MultiRomCard-cache.lib is included here for convenience. If you have the
+Kicad standard symbol libraries installed, you do not need this
+file. Currently, the only items from the standard libraries are the schematic
+symbols for the 74HC595 Shift Register and the 74HC245 Bus Transciever. All
+other schematic symbols are custom made and included in MultiRomCard.lib.
 
-## 2.0  
+![Schematic] (https://rawgithub.com/mkeller0815/flappy4000/master/MultiRom/hardware/Kicad/MultiRomCard.svg)
+
+The current PCB is a first attempt to test the circuit in a more controlled
+environment than on a breadboard (where it did not work!). So be warned, it is
+*not* finished, yet!
+
+![PCB] (https://rawgithub.com/mkeller0815/flappy4000/master/MultiRom/hardware/Kicad/MultiRomCard-brd.svg)
