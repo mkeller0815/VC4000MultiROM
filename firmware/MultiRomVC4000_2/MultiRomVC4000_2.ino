@@ -133,61 +133,61 @@ const byte romImage[] PROGMEM = {
 0x0c, 0x14, 0x12, 0x10, 0x0f, 0x0c, 0x14, 0x12, 0x10, 0x0f, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-#define CLOCK 4    //SRCLK
-#define LATCH 3    //RCLK
-#define DATA  5    //SER
+#define CLOCK     4   // SRCLK
+#define LATCH     3   // RCLK
+#define DATA      5   // SER
 
-#define WR    2
-#define OEDATA    A1  //_G DATA BUS
-#define OEADDRESS A0  //_G ADDRESS BUS
+#define WR        2
+#define OEDATA    A1  // _G DATA BUS
+#define OEADDRESS A0  // _G ADDRESS BUS
 
-#define OEVCBUS 6
+#define OEVCBUS   6
 
-#define CE1SRAM 7
-#define CE2SRAM 8
+#define CE1SRAM   7
+#define CE2SRAM   8
 
-#define LED 13
+#define LED       13
 
 void setup() {
- pinMode(CLOCK,OUTPUT); 
- pinMode(LATCH,OUTPUT); 
- pinMode(DATA,OUTPUT); 
- pinMode(WR,OUTPUT);
- pinMode(OEDATA,OUTPUT);
- pinMode(OEADDRESS,OUTPUT);
- pinMode(OEVCBUS,OUTPUT);
- pinMode(LED,OUTPUT);
+  pinMode(CLOCK, OUTPUT);
+  pinMode(LATCH, OUTPUT);
+  pinMode(DATA, OUTPUT);
+  pinMode(WR, OUTPUT);
+  pinMode(OEDATA, OUTPUT);
+  pinMode(OEADDRESS, OUTPUT);
+  pinMode(OEVCBUS, OUTPUT);
+  pinMode(LED, OUTPUT);
 
- disableVCBus();
- enableSRAM();
+  disableVCBus();
+  enableSRAM();
 
- Serial.begin(9600);
- delay(100);
+  Serial.begin(9600);
+  delay(100);
 
- Serial.println("writing data");
- enableSRAM();
- for (int i=0;i<ROMSIZE;i++) {
-    write2RAM(i,pgm_read_byte(romImage+i));
- }
- disableSRAM();
+  Serial.println("writing data");
+  enableSRAM();
+  for (int i = 0; i < ROMSIZE; i++) {
+    write2RAM(i, pgm_read_byte(romImage + i));
+  }
+  disableSRAM();
 
- Serial.println("done");
- Serial.println("enable bus to VC4000");
- enableVCBus();
+  Serial.println("done");
+  Serial.println("enable bus to VC4000");
+  enableVCBus();
 }
 
 void loop() {
-  digitalWrite(LED,HIGH);
+  digitalWrite(LED, HIGH);
   delay(300);
-  digitalWrite(LED,LOW);
+  digitalWrite(LED, LOW);
   delay(300);
 }
 
 void enableSRAM() {
- pinMode(CE1SRAM,OUTPUT);
- pinMode(CE2SRAM,OUTPUT);
- digitalWrite(CE1SRAM,LOW);
- digitalWrite(CE2SRAM,HIGH);
+  pinMode(CE1SRAM, OUTPUT);
+  pinMode(CE2SRAM, OUTPUT);
+  digitalWrite(CE1SRAM, LOW);
+  digitalWrite(CE2SRAM, HIGH);
 }
 
 void disableSRAM() {
@@ -195,12 +195,11 @@ void disableSRAM() {
   // Switching them to INPUT mode while in HIGH state will
   // activate the internal pullup resistors to VCC (which is a
   // bad idea!).
- digitalWrite(CE1SRAM,LOW);
- digitalWrite(CE2SRAM,LOW);
- pinMode(CE1SRAM,INPUT);
- pinMode(CE2SRAM,INPUT);
+  digitalWrite(CE1SRAM, LOW);
+  digitalWrite(CE2SRAM, LOW);
+  pinMode(CE1SRAM, INPUT);
+  pinMode(CE2SRAM, INPUT);
 }
-
 
 void disableVCBus() {
   digitalWrite(WR, HIGH);
@@ -217,23 +216,23 @@ void enableVCBus() {
 }
 
 void write2RAM(unsigned int address, byte data) {
-  digitalWrite(OEDATA,LOW);
-  digitalWrite(OEADDRESS,LOW);
-  digitalWrite(WR,HIGH);
-  shiftout(address,data);
-  digitalWrite(WR,LOW);
-  digitalWrite(WR,HIGH);
+  digitalWrite(OEDATA, LOW);
+  digitalWrite(OEADDRESS, LOW);
+  digitalWrite(WR, HIGH);
+  shiftout(address, data);
+  digitalWrite(WR, LOW);
+  digitalWrite(WR, HIGH);
 }
 
 void shiftout(unsigned int address, byte data) {
   byte lowbyte = address & 0xff;
   byte highbyte = address >> 8;
 
-  digitalWrite(LATCH,LOW);
-  shiftOut(DATA,CLOCK,MSBFIRST,data);
-  shiftOut(DATA,CLOCK,MSBFIRST,highbyte);
-  shiftOut(DATA,CLOCK,MSBFIRST,lowbyte);
-  digitalWrite(LATCH,HIGH);
+  digitalWrite(LATCH, LOW);
+  shiftOut(DATA, CLOCK, MSBFIRST, data);
+  shiftOut(DATA, CLOCK, MSBFIRST, highbyte);
+  shiftOut(DATA, CLOCK, MSBFIRST, lowbyte);
+  digitalWrite(LATCH, HIGH);
   delay(1);
-  digitalWrite(LATCH,LOW);
+  digitalWrite(LATCH, LOW);
 }
