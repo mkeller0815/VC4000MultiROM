@@ -29,13 +29,14 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:MultiRomCard
+LIBS:MultiRomCard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Interton VC4000 MultiRom Cartridge"
-Date "Monday, June 29, 2015"
+Date "Tuesday, July 21, 2015"
 Rev "0.1"
 Comp "Mario Keller and Johannes Maibaum"
 Comment1 ""
@@ -1008,7 +1009,7 @@ Wire Wire Line
 Wire Wire Line
 	2850 1850 3450 1850
 Wire Wire Line
-	700  3600 700  5250
+	700  3700 700  5250
 Wire Wire Line
 	700  5250 3450 5250
 Wire Wire Line
@@ -1021,7 +1022,7 @@ Wire Wire Line
 	3150 2450 3450 2450
 Connection ~ 3150 3850
 Wire Wire Line
-	800  4750 800  3700
+	800  4750 800  3600
 Wire Wire Line
 	2950 3900 2200 3900
 Wire Wire Line
@@ -1209,10 +1210,6 @@ F 3 "" H 1300 2200 60  0000 C CNN
 	1    1300 2200
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	800  3700 900  3700
-Wire Wire Line
-	700  3600 900  3600
 NoConn ~ 900  3800
 NoConn ~ 900  3900
 $Comp
@@ -1535,7 +1532,7 @@ F 3 "" H 9500 1300 60  0000 C CNN
 $EndComp
 $Comp
 L Arduino_Nano U1
-U 1 1 559141A6
+U 1 1 55AE1829
 P 1550 3650
 F 0 "U1" H 1100 4400 60  0000 C CNN
 F 1 "Arduino_Nano" H 2000 2900 60  0000 C CNN
@@ -1544,4 +1541,8 @@ F 3 "" H 1550 3500 60  0000 C CNN
 	1    1550 3650
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	800  3600 900  3600
+Wire Wire Line
+	700  3700 900  3700
 $EndSCHEMATC

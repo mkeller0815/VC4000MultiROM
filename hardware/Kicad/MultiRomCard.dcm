@@ -6,7 +6,7 @@ K SRAM 8Kx8
 $ENDCMP
 #
 $CMP Arduino_Nano
-D Arduino Nano 3.1 with Atmega 328
+D Arduino Nano 3.1 with Atmega 328P
 $ENDCMP
 #
 $CMP Arduino_UNO
