@@ -41,7 +41,7 @@ try:
 #ifndef ROM_{3}_H
 #define ROM_{3}_H
 
-static unsigned char rom[] = {{
+const byte romImage[] PROGMEM = {{
 '''.format(bin_name, basename(__file__), date.today(), rom_name.upper())
 
     source_footer = '''}};
@@ -69,7 +69,7 @@ static unsigned char rom[] = {{
             outfile.write(source_header)
 
             for nr, line in enumerate(rom_lines):
-                outfile.write('    ')  # Indentation.
+                outfile.write('  ')  # Indentation.
                 outfile.write(line)
 
                 # All lines except the last need continuation with ',':
