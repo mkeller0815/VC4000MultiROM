@@ -36,7 +36,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Interton VC4000 MultiRom Cartridge"
-Date "Tuesday, July 21, 2015"
+Date "Wednesday, July 22, 2015"
 Rev "0.1"
 Comp "Mario Keller and Johannes Maibaum"
 Comment1 ""
@@ -620,12 +620,12 @@ $EndComp
 $Comp
 L GND #PWR07
 U 1 1 54DB8BDD
-P 9550 3900
-F 0 "#PWR07" H 9550 3900 30  0001 C CNN
-F 1 "GND" H 9550 3830 30  0001 C CNN
-F 2 "" H 9550 3900 60  0000 C CNN
-F 3 "" H 9550 3900 60  0000 C CNN
-	1    9550 3900
+P 9750 3900
+F 0 "#PWR07" H 9750 3900 30  0001 C CNN
+F 1 "GND" H 9750 3830 30  0001 C CNN
+F 2 "" H 9750 3900 60  0000 C CNN
+F 3 "" H 9750 3900 60  0000 C CNN
+	1    9750 3900
 	1    0    0    -1  
 $EndComp
 NoConn ~ 900  4000
@@ -967,7 +967,7 @@ Wire Bus Line
 Wire Bus Line
 	10100 1500 9800 1500
 Wire Bus Line
-	9800 1500 9800 3550
+	9800 1500 9800 3750
 Wire Wire Line
 	9450 4650 9650 4650
 Wire Wire Line
@@ -1087,14 +1087,11 @@ Wire Wire Line
 Wire Wire Line
 	6750 3850 8050 3850
 Wire Wire Line
-	9550 3750 9550 3900
-Wire Wire Line
-	9550 3850 9450 3850
+	9450 3850 9700 3850
 Wire Wire Line
 	10200 3550 10550 3550
 Wire Wire Line
 	10200 3650 10550 3650
-Connection ~ 9550 3850
 Wire Bus Line
 	5050 5550 7800 5550
 Connection ~ 6950 3850
@@ -1130,7 +1127,7 @@ Wire Wire Line
 Wire Wire Line
 	7500 3550 8050 3550
 Wire Wire Line
-	9550 3750 9450 3750
+	9450 3750 9750 3750
 Wire Wire Line
 	9450 3650 9700 3650
 Wire Wire Line
@@ -1545,4 +1542,10 @@ Wire Wire Line
 	800  3600 900  3600
 Wire Wire Line
 	700  3700 900  3700
+Entry Wire Line
+	9700 3850 9800 3750
+Text Label 9450 3850 0    60   ~ 0
+EA12
+Wire Wire Line
+	9750 3750 9750 3900
 $EndSCHEMATC
