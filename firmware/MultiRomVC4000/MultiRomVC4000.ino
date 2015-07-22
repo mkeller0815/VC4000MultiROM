@@ -159,7 +159,6 @@ void setup() {
   pinMode(LED, OUTPUT);
 
   disableVCBus();
-  enableSRAM();
 
   Serial.begin(9600);
   delay(100);
@@ -170,8 +169,8 @@ void setup() {
     write2RAM(i, pgm_read_byte(romImage + i));
   }
   disableSRAM();
-
   Serial.println("done");
+
   Serial.println("enable bus to VC4000");
   enableVCBus();
 }
