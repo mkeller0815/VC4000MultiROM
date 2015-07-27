@@ -37,26 +37,26 @@ grndprix.bin | 2K   | FAILS  | 43c7404
 hippodro.bin | 2K   | FAILS  | 43c7404
 horsrace.bin | 2K   | LOADS  | 43c7404
  hunting.bin | 2K   | WORKS  | 43c7404
-hyprspac.bin | 2K   | n/a    |
-invadera.bin | 2K   | n/a    |
-invaderb.bin | 2K   | n/a    |
-knockout.bin | 2K   | n/a    |
-labyrint.bin | 2K   | n/a    |
-laseratt.bin | 2K   | n/a    |
-mathema1.bin | 2K   | n/a    |
-mathema2.bin | 2K   | n/a    |
-mmuncher.bin | 2K   | n/a    |
-musicalg.bin | 2K   | n/a    |
-olympics.bin | 2K   | n/a    |
-pinballa.bin | 2K   | n/a    |
-pinballb.bin | 2K   | n/a    |
-planetde.bin | 2K   | n/a    |
-shootgal.bin | 2K   | n/a    |
-shootout.bin | 2K   | n/a    |
- soccera.bin | 2K   | n/a    |
- soccerb.bin | 2K   | n/a    |
-solitair.bin | 2K   | n/a    |
-spacewar.bin | 2K   | n/a    |
-superinv.bin | 2K   | n/a    |
-suprmaze.bin | 2K   | n/a    |
-treasure.bin | 2K   | n/a    |
+hyprspac.bin | 2K   | FAILS  | 43c7404
+invadera.bin | 2K   | WORKS  | 43c7404
+invaderb.bin | 2K   | WORKS  | 43c7404
+knockout.bin | 2K   | WORKS  | 43c7404
+labyrint.bin | 2K   | WORKS  | 43c7404
+laseratt.bin | 2K   | WORKS  | 43c7404
+mathema1.bin | 2K   | FAILS  | 43c7404
+mathema2.bin | 2K   | LOADS  | 43c7404
+mmuncher.bin | 2K   | WORKS  | 43c7404
+musicalg.bin | 2K   | WORKS  | 43c7404
+olympics.bin | 2K   | WORKS  | 43c7404
+pinballa.bin | 2K   | WORKS  | 43c7404
+pinballb.bin | 2K   | WORKS  | 43c7404
+planetde.bin | 2K   | WORKS  | 43c7404
+shootgal.bin | 2K   | WORKS  | 43c7404
+shootout.bin | 2K   | WORKS  | 43c7404
+ soccera.bin | 2K   | WORKS  | 43c7404
+ soccerb.bin | 2K   | WORKS  | 43c7404
+solitair.bin | 2K   | FAILS  | 43c7404
+spacewar.bin | 2K   | WORKS  | 43c7404
+superinv.bin | 2K   | FAILS  | 43c7404
+suprmaze.bin | 2K   | WORKS  | 43c7404
+treasure.bin | 2K   | WORKS  | 43c7404
