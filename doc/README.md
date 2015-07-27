@@ -18,6 +18,8 @@ other reason.
 ROM Status Table
 ----------------
 
+Last tested with: mkeller0815/flappy4000@43c74042
+
 ROM file     | Type | Status | Last tested with FW commit
 ------------:|:-----|:-------|-------------------------------
  4inarow.bin | 2K   | FAILS  | mkeller0815/flappy4000@43c7404
