@@ -18,7 +18,7 @@ other reason.
 ROM Status Table
 ----------------
 
-Last tested with: mkeller0815/flappy4000@43c74042
+43c7404280ee36d8e19a6bdb0f70b12267623ee3
 
 ROM file     | Type | Status | Last tested with FW commit
 ------------:|:-----|:-------|-------------------------------
