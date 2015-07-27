@@ -19,24 +19,24 @@ ROM Status Table
 ----------------
 
 ROM file     | Type | Status | Last tested with FW commit
-------------:|:-----|:-------|---------------------------
- 4inarow.bin | 2K   | FAILS  | 43c7404
- asbattl.bin | 2K   | WORKS  | 43c7404
-asattack.bin | 2K   | WORKS  | 43c7404
-blackjac.bin | 2K   | FAILS  | 43c7404
- bowling.bin | 2K   | LOADS  | 43c7404
- capture.bin | 2K   | FAILS  | 43c7404
-carraces.bin | 2K   | LOADS  | 43c7404
-  casino.bin | 2K   | FAILS  | 43c7404
- codebrk.bin | 2K   | WORKS  | 43c7404
- combata.bin | 2K   | FAILS  | 43c7404
- combatb.bin | 2K   | FAILS  | 43c7404
-  cowboy.bin | 2K   | WORKS  | 43c7404
-grndprix.bin | 2K   | FAILS  | 43c7404
-  headon.bin | 2K   | WORKS  | 43c7404
-hippodro.bin | 2K   | FAILS  | 43c7404
-horsrace.bin | 2K   | LOADS  | 43c7404
- hunting.bin | 2K   | WORKS  | 43c7404
+------------:|:-----|:-------|-----------------------------------------
+ 4inarow.bin | 2K   | FAILS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+ asbattl.bin | 2K   | WORKS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+asattack.bin | 2K   | WORKS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+blackjac.bin | 2K   | FAILS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+ bowling.bin | 2K   | LOADS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+ capture.bin | 2K   | FAILS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+carraces.bin | 2K   | LOADS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+  casino.bin | 2K   | FAILS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+ codebrk.bin | 2K   | WORKS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+ combata.bin | 2K   | FAILS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+ combatb.bin | 2K   | FAILS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+  cowboy.bin | 2K   | WORKS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+grndprix.bin | 2K   | FAILS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+  headon.bin | 2K   | WORKS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+hippodro.bin | 2K   | FAILS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+horsrace.bin | 2K   | LOADS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
+ hunting.bin | 2K   | WORKS  | 43c7404280ee36d8e19a6bdb0f70b12267623ee3
 hyprspac.bin | 2K   | n/a    |
 invadera.bin | 2K   | n/a    |
 invaderb.bin | 2K   | n/a    |
