@@ -24,7 +24,7 @@ ROM Status Table
 - *FAILS:* 12/40 (30%)
 
 ROM file     | Type | Status | Last tested with FW commit
-------------:|:-----|:-------|-------------------------------
+------------:|:-----|:-------|---------------------------
  4inarow.bin | 2K   | FAILS  | 43c7404
  asbattl.bin | 2K   | WORKS  | 43c7404
 asattack.bin | 2K   | WORKS  | 43c7404
