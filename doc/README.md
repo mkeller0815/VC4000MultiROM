@@ -18,6 +18,11 @@ other reason.
 ROM Status Table
 ----------------
 
+**Statistics at 43c7404**
+- *WORKS:* 24/40 (60%)
+- *LOADS:* 4/40 (10%)
+- *FAILS:* 12/40 (30%)
+
 ROM file     | Type | Status | Last tested with FW commit
 ------------:|:-----|:-------|-------------------------------
  4inarow.bin | 2K   | FAILS  | 43c7404
