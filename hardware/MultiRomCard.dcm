@@ -15,6 +15,11 @@ $ENDCMP
 #
 $CMP MicroSD_Breakout
 D MicroSD Card Breakout Board (Arduino Compatible)
+K microsd, sd, arduino
+$ENDCMP
+#
+$CMP MicroSD_Breakout_Adafruit
+D Adafruit MicroSD Card Breakout Board (Arduino Compatible)
 K microsd, sd, arduino, adafruit
 $ENDCMP
 #

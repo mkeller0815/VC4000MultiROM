@@ -36,7 +36,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Interton VC4000 MultiRom Cartridge"
-Date "Wednesday, July 22, 2015"
+Date "Tuesday, July 28, 2015"
 Rev "0.1"
 Comp "Mario Keller and Johannes Maibaum"
 Comment1 ""
@@ -1160,23 +1160,15 @@ Wire Wire Line
 Wire Wire Line
 	1600 2350 1600 1650
 Wire Wire Line
-	1500 2250 2600 2250
-Wire Wire Line
-	2600 2250 2600 3300
+	2600 1950 2600 3300
 Wire Wire Line
 	2600 3300 2200 3300
 Wire Wire Line
-	1500 1950 2300 1950
+	2200 3000 2300 3000
 Wire Wire Line
-	2300 1950 2300 3000
+	1500 2050 2300 2050
 Wire Wire Line
-	2300 3000 2200 3000
-Wire Wire Line
-	1500 2050 2400 2050
-Wire Wire Line
-	2400 2050 2400 3100
-Wire Wire Line
-	2400 3100 2200 3100
+	2300 2050 2300 3000
 Wire Wire Line
 	1500 2150 2500 2150
 Wire Wire Line
@@ -1195,17 +1187,6 @@ F 2 "" H 1600 1650 60  0000 C CNN
 F 3 "" H 1600 1650 60  0000 C CNN
 	1    1600 1650
 	1    0    0    -1  
-$EndComp
-$Comp
-L MicroSD_Breakout P2
-U 1 1 55880347
-P 1300 2200
-F 0 "P2" H 1400 2550 60  0000 C CNN
-F 1 "MicroSD_Breakout" V 1600 2200 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06" H 1300 2200 60  0001 C CNN
-F 3 "" H 1300 2200 60  0000 C CNN
-	1    1300 2200
-	-1   0    0    -1  
 $EndComp
 NoConn ~ 900  3800
 NoConn ~ 900  3900
@@ -1548,4 +1529,23 @@ Text Label 9450 3850 0    60   ~ 0
 EA12
 Wire Wire Line
 	9750 3750 9750 3900
+$Comp
+L MicroSD_Breakout P2
+U 1 1 55B39402
+P 1300 2200
+F 0 "P2" H 1400 2550 60  0000 C CNN
+F 1 "MicroSD_Breakout" V 1600 2200 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06" H 1300 2200 60  0001 C CNN
+F 3 "" H 1300 2200 60  0000 C CNN
+	1    1300 2200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 1950 1500 1950
+Wire Wire Line
+	1500 2250 2400 2250
+Wire Wire Line
+	2400 2250 2400 3100
+Wire Wire Line
+	2400 3100 2200 3100
 $EndSCHEMATC
