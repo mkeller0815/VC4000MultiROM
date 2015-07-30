@@ -16,7 +16,7 @@
 
 #define SD_CS          10
 #define FILENAME_SIZE  12    // 8.3 convention, see SD library doc.
-#define MAX_ROM_SIZE   2048
+#define MAX_ROM_SIZE   6144
 
 #define LED            13
 
@@ -122,6 +122,9 @@ void enableVCBus() {
   digitalWrite(OEDATA, HIGH);
   digitalWrite(OEADDRESS, HIGH);
   digitalWrite(OEVCBUS, LOW);
+  delay(100);
+  //handover R/W control to VC4000
+  digitalWrite(WR, LOW);
 }
 
 void write2RAM(unsigned int address, byte data) {
