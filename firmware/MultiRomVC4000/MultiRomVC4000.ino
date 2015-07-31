@@ -38,12 +38,9 @@ void setup() {
 
   disableVCBus();
 
-  //Serial.begin(9600);
-
   // Initializing SD card and open ROM file
   if (SD.begin(SD_CS)) {
     if (getRomName()) {
-      Serial.println(romName);
       romFile = SD.open(romName);
     } else {
       // ROM name could not be determined.
@@ -62,9 +59,6 @@ void setup() {
     unsigned romSize = static_cast<unsigned>(romFile.size());
     if (romSize <= MAX_ROM_SIZE) {
       for (unsigned i = 0; i < romSize; i++) {
-        //byte romByte = romFile.read();
-        //Serial.println(romByte);
-        //write2RAM(i, romByte);
         write2RAM(i, romFile.read());
       }
     } else {
@@ -86,6 +80,7 @@ void setup() {
 }
 
 void loop() {
+  // Status indication
   digitalWrite(LED, HIGH);
   delay(blinkTimeHigh);
   digitalWrite(LED, LOW);
@@ -123,7 +118,7 @@ void enableVCBus() {
   digitalWrite(OEADDRESS, HIGH);
   digitalWrite(OEVCBUS, LOW);
   delay(100);
-  //handover R/W control to VC4000
+  // handover R/W control to VC4000
   digitalWrite(WR, LOW);
 }
 
