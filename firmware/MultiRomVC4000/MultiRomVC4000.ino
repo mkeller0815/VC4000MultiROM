@@ -67,8 +67,6 @@ void setup() {
       blinkTimeLow = 1000;
     }
     romFile.close();
-
-    disableSRAM();
     enableVCBus();
   } else {
     // ROM file could not be opened.
@@ -92,17 +90,6 @@ void enableSRAM() {
   pinMode(CE2SRAM, OUTPUT);
   digitalWrite(CE1SRAM, LOW);
   digitalWrite(CE2SRAM, HIGH);
-}
-
-void disableSRAM() {
-  // Ensure that CE1+2 are in LOW state before turning them OFF.
-  // Switching them to INPUT mode while in HIGH state will
-  // activate the internal pullup resistors to VCC (which is a
-  // bad idea!).
-  digitalWrite(CE1SRAM, LOW);
-  digitalWrite(CE2SRAM, LOW);
-  pinMode(CE1SRAM, INPUT);
-  pinMode(CE2SRAM, INPUT);
 }
 
 void disableVCBus() {
