@@ -1,20 +1,16 @@
 #include <SD.h>
 #include <SPI.h>
 
-#define CLOCK          4     // SRCLK
+#define CLOCK          5     // SRCLK
 #define LATCH          3     // RCLK
-#define DATA           5     // SER
+#define DATA           6     // SER
 
-#define WR             2
-#define OEDATA         A1    // _G DATA BUS
-#define OEADDRESS      A0    // _G ADDRESS BUS
+#define WESRAM         10
+#define OESHIFT        2     // _G Shift Registers
 
-#define OEVCBUS        6
+#define OEVCBUS        7
 
-#define CE1SRAM        7
-#define CE2SRAM        8
-
-#define SD_CS          10
+#define SD_CS          4
 #define FILENAME_SIZE  12    // 8.3 convention, see SD library doc.
 #define MAX_ROM_SIZE   6144
 
@@ -30,7 +26,7 @@ void setup() {
   pinMode(CLOCK, OUTPUT);
   pinMode(LATCH, OUTPUT);
   pinMode(DATA, OUTPUT);
-  pinMode(WR, OUTPUT);
+  pinMode(WESRAM, OUTPUT);
   pinMode(OEDATA, OUTPUT);
   pinMode(OEADDRESS, OUTPUT);
   pinMode(OEVCBUS, OUTPUT);
@@ -93,29 +89,29 @@ void enableSRAM() {
 }
 
 void disableVCBus() {
-  digitalWrite(WR, HIGH);
+  digitalWrite(WESRAM, HIGH);
   digitalWrite(OEDATA, LOW);
   digitalWrite(OEADDRESS, LOW);
   digitalWrite(OEVCBUS, HIGH);
 }
 
 void enableVCBus() {
-  digitalWrite(WR, HIGH);
+  digitalWrite(WESRAM, HIGH);
   digitalWrite(OEDATA, HIGH);
   digitalWrite(OEADDRESS, HIGH);
   digitalWrite(OEVCBUS, LOW);
   delay(100);
   // handover R/W control to VC4000
-  digitalWrite(WR, LOW);
+  digitalWrite(WESRAM, LOW);
 }
 
 void write2RAM(unsigned int address, byte data) {
   digitalWrite(OEDATA, LOW);
   digitalWrite(OEADDRESS, LOW);
-  digitalWrite(WR, HIGH);
+  digitalWrite(WESRAM, HIGH);
   shiftout(address, data);
-  digitalWrite(WR, LOW);
-  digitalWrite(WR, HIGH);
+  digitalWrite(WESRAM, LOW);
+  digitalWrite(WESRAM, HIGH);
 }
 
 void shiftout(unsigned int address, byte data) {
