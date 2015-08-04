@@ -36,7 +36,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Interton VC4000 MultiRom Cartridge"
-Date "Monday, August 3, 2015"
+Date "Tuesday, August 4, 2015"
 Rev "0.2"
 Comp "Mario Keller and Johannes Maibaum"
 Comment1 ""
@@ -541,7 +541,7 @@ F 3 "" H 1700 2800 60  0000 C CNN
 	1    1700 2800
 	1    0    0    -1  
 $EndComp
-Text GLabel 6700 3700 2    48   Input ~ 0
+Text GLabel 6700 3500 2    48   Input ~ 0
 WESRAM
 Text GLabel 2200 3300 2    48   Output ~ 0
 WESRAM
@@ -573,7 +573,7 @@ Text GLabel 2200 3600 2    48   Output ~ 0
 OEVCBUS
 Text GLabel 9500 3350 1    48   Input ~ 0
 OEVCBUS
-Text GLabel 5500 4700 0    48   Input ~ 0
+Text GLabel 5500 5150 0    48   Input ~ 0
 OEVCBUS
 Text GLabel 9550 1400 2    48   Input ~ 0
 OEVCBUS
@@ -805,23 +805,23 @@ RW
 $Comp
 L R R1
 U 1 1 55BBBA81
-P 7150 3750
-F 0 "R1" V 7230 3750 50  0000 C CNN
-F 1 "10k" V 7150 3750 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 7080 3750 30  0001 C CNN
-F 3 "" H 7150 3750 30  0000 C CNN
-	1    7150 3750
+P 7150 3900
+F 0 "R1" V 7230 3900 50  0000 C CNN
+F 1 "10k" V 7150 3900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 7080 3900 30  0001 C CNN
+F 3 "" H 7150 3900 30  0000 C CNN
+	1    7150 3900
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR012
 U 1 1 55BBBD64
-P 7150 3900
-F 0 "#PWR012" H 7150 3900 30  0001 C CNN
-F 1 "GND" H 7150 3830 30  0001 C CNN
-F 2 "" H 7150 3900 60  0000 C CNN
-F 3 "" H 7150 3900 60  0000 C CNN
-	1    7150 3900
+P 7150 4050
+F 0 "#PWR012" H 7150 4050 30  0001 C CNN
+F 1 "GND" H 7150 3980 30  0001 C CNN
+F 2 "" H 7150 4050 60  0000 C CNN
+F 3 "" H 7150 4050 60  0000 C CNN
+	1    7150 4050
 	1    0    0    -1  
 $EndComp
 Entry Wire Line
@@ -829,28 +829,28 @@ Entry Wire Line
 $Comp
 L 74HC00 U9
 U 1 1 55BBD9BC
-P 6100 4100
-F 0 "U9" H 6100 4150 60  0000 C CNN
-F 1 "74HC00" H 6100 4050 60  0000 C CNN
-F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 6100 4100 60  0001 C CNN
-F 3 "" H 6100 4100 60  0000 C CNN
-	1    6100 4100
+P 6100 4550
+F 0 "U9" H 6100 4600 60  0000 C CNN
+F 1 "74HC00" H 6100 4500 60  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 6100 4550 60  0001 C CNN
+F 3 "" H 6100 4550 60  0000 C CNN
+	1    6100 4550
 	-1   0    0    -1  
 $EndComp
 $Comp
 L 74LS32 U10
 U 1 1 55BBDA1A
-P 6100 4600
-F 0 "U10" H 6100 4650 60  0000 C CNN
-F 1 "74HC32" H 6100 4550 60  0000 C CNN
-F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 6100 4600 60  0001 C CNN
-F 3 "" H 6100 4600 60  0000 C CNN
-	1    6100 4600
+P 6100 5050
+F 0 "U10" H 6100 5100 60  0000 C CNN
+F 1 "74HC32" H 6100 5000 60  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 6100 5050 60  0001 C CNN
+F 3 "" H 6100 5050 60  0000 C CNN
+	1    6100 5050
 	1    0    0    -1  
 $EndComp
 Text GLabel 9600 4850 2    48   Input ~ 0
 CEDBUS
-Text GLabel 6700 4600 2    48   Output ~ 0
+Text GLabel 6700 5050 2    48   Output ~ 0
 CEDBUS
 $Comp
 L C C8
@@ -882,16 +882,16 @@ $Comp
 L 74HC00 U9
 U 2 1 55BC3174
 P 9150 850
-F 0 "U9" H 9150 800 60  0000 C CNN
-F 1 "74HC00" H 9150 900 60  0000 C CNN
+F 0 "U9" H 9150 900 60  0000 C CNN
+F 1 "74HC00" H 9150 800 60  0000 C CNN
 F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 9150 850 60  0001 C CNN
 F 3 "" H 9150 850 60  0000 C CNN
 	2    9150 850 
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
-Text Label 9750 750  0    60   ~ 0
-WRP
 Text Label 9750 950  0    60   ~ 0
+WRP
+Text Label 9750 750  0    60   ~ 0
 RW
 Entry Wire Line
 	9950 750  10050 850 
@@ -905,12 +905,12 @@ $Comp
 L 74LS32 U10
 U 2 1 55BC41B8
 P 6100 3600
-F 0 "U10" H 6100 3550 60  0000 C CNN
-F 1 "74HC32" H 6100 3650 60  0000 C CNN
+F 0 "U10" H 6100 3650 60  0000 C CNN
+F 1 "74HC32" H 6100 3550 60  0000 C CNN
 F 2 "Housings_DIP:DIP-14_W7.62mm_LongPads" H 6100 3600 60  0001 C CNN
 F 3 "" H 6100 3600 60  0000 C CNN
 	2    6100 3600
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 NoConn ~ 10550 2350
 NoConn ~ 2200 3400
@@ -962,9 +962,9 @@ Connection ~ 3000 7450
 Connection ~ 2700 7450
 Connection ~ 2700 7150
 Wire Wire Line
-	5400 4500 5500 4500
+	5400 4950 5500 4950
 Wire Wire Line
-	5400 4100 5400 4500
+	5400 4550 5400 4950
 Wire Wire Line
 	9300 4850 9600 4850
 Wire Wire Line
@@ -1328,7 +1328,7 @@ Wire Wire Line
 Wire Wire Line
 	4950 3000 3350 3000
 Wire Wire Line
-	5400 4100 5500 4100
+	5400 4550 5500 4550
 Wire Wire Line
 	9300 4350 9750 4350
 Wire Wire Line
@@ -1336,8 +1336,8 @@ Wire Wire Line
 Wire Wire Line
 	9750 750  9950 750 
 Wire Wire Line
-	6700 4000 6700 4200
-Connection ~ 6700 4100
+	6700 4450 6700 4650
+Connection ~ 6700 4550
 Wire Wire Line
 	5400 3350 5400 3600
 Wire Wire Line
@@ -1382,20 +1382,18 @@ Wire Bus Line
 Wire Bus Line
 	5050 6050 7700 6050
 Wire Wire Line
-	6700 3500 7700 3500
+	6700 4550 7700 4550
 Wire Wire Line
-	6700 4100 7700 4100
-Wire Wire Line
-	7700 4100 7700 4150
+	7700 4550 7700 4150
 Wire Wire Line
 	7700 4150 7900 4150
 Wire Wire Line
-	7150 3500 7150 3600
+	7150 3700 7150 3750
 Wire Wire Line
-	7700 3500 7700 3750
+	7700 3700 7700 3750
 Wire Wire Line
 	7700 3750 7900 3750
-Connection ~ 7150 3500
+Connection ~ 7150 3700
 NoConn ~ 7900 4450
 Wire Wire Line
 	2200 4100 3150 4100
@@ -1416,11 +1414,13 @@ Wire Bus Line
 Wire Bus Line
 	9850 1500 9850 4250
 Wire Bus Line
-	7400 1500 7400 4250
-Wire Bus Line
 	5250 1500 5250 3050
 Wire Bus Line
 	5150 1500 5150 3550
 Wire Bus Line
-	5050 6050 5050 4750
+	5050 4750 5050 6050
+Wire Wire Line
+	6700 3700 7700 3700
+Wire Bus Line
+	7400 1500 7400 4250
 $EndSCHEMATC
