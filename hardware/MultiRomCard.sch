@@ -588,10 +588,7 @@ F 3 "" H 10400 4900 60  0000 C CNN
 	1    10400 4900
 	1    0    0    -1  
 $EndComp
-NoConn ~ 900  4000
-NoConn ~ 900  4100
 NoConn ~ 900  4200
-NoConn ~ 900  4300
 Entry Wire Line
 	10050 4750 10150 4650
 Entry Wire Line
@@ -719,17 +716,15 @@ F 3 "" H 1600 1650 60  0000 C CNN
 	1    1600 1650
 	1    0    0    -1  
 $EndComp
-NoConn ~ 900  3800
-NoConn ~ 900  3900
 $Comp
 L GND #PWR010
 U 1 1 54D739DD
-P 1550 4600
-F 0 "#PWR010" H 1550 4600 30  0001 C CNN
-F 1 "GND" H 1550 4530 30  0001 C CNN
-F 2 "" H 1550 4600 60  0000 C CNN
-F 3 "" H 1550 4600 60  0000 C CNN
-	1    1550 4600
+P 1550 4700
+F 0 "#PWR010" H 1550 4700 30  0001 C CNN
+F 1 "GND" H 1550 4630 30  0001 C CNN
+F 2 "" H 1550 4700 60  0000 C CNN
+F 3 "" H 1550 4700 60  0000 C CNN
+	1    1550 4700
 	1    0    0    -1  
 $EndComp
 Entry Wire Line
@@ -996,7 +991,7 @@ Wire Wire Line
 	9750 3950 9300 3950
 Connection ~ 1550 4550
 Wire Wire Line
-	1550 4550 1550 4600
+	1550 4550 1550 4700
 Wire Wire Line
 	1600 4550 1600 4500
 Wire Wire Line
@@ -1031,7 +1026,7 @@ Connection ~ 1800 7450
 Connection ~ 1500 7450
 Connection ~ 1200 7450
 Wire Wire Line
-	700  7450 3300 7450
+	700  7450 3550 7450
 Connection ~ 2400 7150
 Connection ~ 2100 7150
 Connection ~ 1800 7150
@@ -1423,4 +1418,151 @@ Wire Wire Line
 	6700 3700 7700 3700
 Wire Bus Line
 	7400 1500 7400 4250
+$Comp
+L R R2
+U 1 1 55D04E06
+P 1400 6250
+F 0 "R2" V 1480 6250 50  0000 C CNN
+F 1 "2k2" V 1400 6250 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1330 6250 30  0001 C CNN
+F 3 "" H 1400 6250 30  0000 C CNN
+	1    1400 6250
+	0    1    1    0   
+$EndComp
+$Comp
+L R R3
+U 1 1 55D04F05
+P 1900 6250
+F 0 "R3" V 1980 6250 50  0000 C CNN
+F 1 "330" V 1900 6250 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1830 6250 30  0001 C CNN
+F 3 "" H 1900 6250 30  0000 C CNN
+	1    1900 6250
+	0    1    1    0   
+$EndComp
+$Comp
+L R R4
+U 1 1 55D04F72
+P 2400 6250
+F 0 "R4" V 2480 6250 50  0000 C CNN
+F 1 "1k" V 2400 6250 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2330 6250 30  0001 C CNN
+F 3 "" H 2400 6250 30  0000 C CNN
+	1    2400 6250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1100 5500 1100 7150
+Wire Wire Line
+	1100 6250 1250 6250
+Connection ~ 1100 7150
+Wire Wire Line
+	1550 6250 1750 6250
+Wire Wire Line
+	2050 6250 2250 6250
+$Comp
+L SW_PUSH SW1
+U 1 1 55D05320
+P 1650 6600
+F 0 "SW1" H 1800 6710 50  0000 C CNN
+F 1 "UP" H 1650 6520 50  0000 C CNN
+F 2 "Buttons_Switches_ThroughHole:SW_PUSH_SMALL" H 1650 6600 60  0001 C CNN
+F 3 "" H 1650 6600 60  0000 C CNN
+	1    1650 6600
+	0    1    1    0   
+$EndComp
+$Comp
+L SW_PUSH SW2
+U 1 1 55D05473
+P 2150 6600
+F 0 "SW2" H 2300 6710 50  0000 C CNN
+F 1 "DOWN" H 2150 6520 50  0000 C CNN
+F 2 "Buttons_Switches_ThroughHole:SW_PUSH_SMALL" H 2150 6600 60  0001 C CNN
+F 3 "" H 2150 6600 60  0000 C CNN
+	1    2150 6600
+	0    1    1    0   
+$EndComp
+$Comp
+L SW_PUSH SW3
+U 1 1 55D054DB
+P 2650 6600
+F 0 "SW3" H 2800 6710 50  0000 C CNN
+F 1 "SELECT" H 2650 6520 50  0000 C CNN
+F 2 "Buttons_Switches_ThroughHole:SW_PUSH_SMALL" H 2650 6600 60  0001 C CNN
+F 3 "" H 2650 6600 60  0000 C CNN
+	1    2650 6600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1650 6900 3550 6900
+Connection ~ 2150 6900
+Wire Wire Line
+	3550 6900 3550 7450
+Connection ~ 3300 7450
+Connection ~ 2650 6900
+Wire Wire Line
+	1650 6150 1650 6300
+Connection ~ 1650 6250
+Wire Wire Line
+	2150 6300 2150 6250
+Connection ~ 2150 6250
+Wire Wire Line
+	2650 6300 2650 6250
+Wire Wire Line
+	2650 6250 2550 6250
+$Comp
+L CONN_01X06 P3
+U 1 1 55D05CFD
+P 1950 5350
+F 0 "P3" H 1950 5700 50  0000 C CNN
+F 1 "DISPLAY" V 2050 5350 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06" H 1950 5350 60  0001 C CNN
+F 3 "" H 1950 5350 60  0000 C CNN
+	1    1950 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 5600 1650 5600
+Wire Wire Line
+	1650 5600 1650 5750
+Wire Wire Line
+	1650 5750 2950 5750
+Wire Wire Line
+	2950 5750 2950 6900
+Connection ~ 2950 6900
+Wire Wire Line
+	1750 5500 1100 5500
+Connection ~ 1100 6250
+Wire Wire Line
+	900  4300 850  4300
+Wire Wire Line
+	850  4300 850  6150
+Wire Wire Line
+	850  6150 1650 6150
+Wire Wire Line
+	900  4100 750  4100
+Wire Wire Line
+	750  4100 750  5400
+Wire Wire Line
+	750  5400 1750 5400
+Wire Wire Line
+	900  4000 700  4000
+Wire Wire Line
+	700  4000 700  5300
+Wire Wire Line
+	700  5300 1750 5300
+Wire Wire Line
+	900  3900 650  3900
+Wire Wire Line
+	650  3900 650  5200
+Wire Wire Line
+	650  5200 1750 5200
+Wire Wire Line
+	900  3800 600  3800
+Wire Wire Line
+	600  3800 600  5100
+Wire Wire Line
+	600  5100 1750 5100
+Text Notes 1300 6100 0    60   ~ 0
+R2R Ladder - Select Buttons
 $EndSCHEMATC
