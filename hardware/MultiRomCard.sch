@@ -36,7 +36,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Interton VC4000 MultiRom Cartridge"
-Date "Tuesday, August 4, 2015"
+Date "Sunday, August 16, 2015"
 Rev "0.2"
 Comp "Mario Keller and Johannes Maibaum"
 Comment1 ""
