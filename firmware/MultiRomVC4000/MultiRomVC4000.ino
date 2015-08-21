@@ -23,12 +23,12 @@ char romName[FILENAME_SIZE + 1];
 File romFile;
 
 void setup() {
+  pinMode(SD_CS, OUTPUT);
   pinMode(CLOCK, OUTPUT);
   pinMode(LATCH, OUTPUT);
   pinMode(DATA, OUTPUT);
   pinMode(WESRAM, OUTPUT);
-  pinMode(OEDATA, OUTPUT);
-  pinMode(OEADDRESS, OUTPUT);
+  pinMode(OESHIFT, OUTPUT);
   pinMode(OEVCBUS, OUTPUT);
   pinMode(LED, OUTPUT);
 
@@ -51,7 +51,7 @@ void setup() {
 
   // Write ROM file to SRAM
   if (romFile) {
-    enableSRAM();
+    //enableSRAM();
     unsigned romSize = static_cast<unsigned>(romFile.size());
     if (romSize <= MAX_ROM_SIZE) {
       for (unsigned i = 0; i < romSize; i++) {
@@ -81,24 +81,22 @@ void loop() {
   delay(blinkTimeLow);
 }
 
-void enableSRAM() {
+/*void enableSRAM() {
   pinMode(CE1SRAM, OUTPUT);
   pinMode(CE2SRAM, OUTPUT);
   digitalWrite(CE1SRAM, LOW);
   digitalWrite(CE2SRAM, HIGH);
-}
+}*/
 
 void disableVCBus() {
   digitalWrite(WESRAM, HIGH);
-  digitalWrite(OEDATA, LOW);
-  digitalWrite(OEADDRESS, LOW);
+  digitalWrite(OESHIFT, LOW);
   digitalWrite(OEVCBUS, HIGH);
 }
 
 void enableVCBus() {
   digitalWrite(WESRAM, HIGH);
-  digitalWrite(OEDATA, HIGH);
-  digitalWrite(OEADDRESS, HIGH);
+  digitalWrite(OESHIFT, HIGH);
   digitalWrite(OEVCBUS, LOW);
   delay(100);
   // handover R/W control to VC4000
@@ -106,8 +104,7 @@ void enableVCBus() {
 }
 
 void write2RAM(unsigned int address, byte data) {
-  digitalWrite(OEDATA, LOW);
-  digitalWrite(OEADDRESS, LOW);
+  digitalWrite(OESHIFT, LOW);
   digitalWrite(WESRAM, HIGH);
   shiftout(address, data);
   digitalWrite(WESRAM, LOW);
