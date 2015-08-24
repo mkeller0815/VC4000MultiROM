@@ -25,31 +25,36 @@ ROM Status Table
 
 ROM file     | Type | Status | Last tested with FW commit
 ------------:|:-----|:-------|---------------------------
- 4inarow.bin | 2K   | FAILS  | 43c7404
- asbattl.bin | 2K   | WORKS  | 43c7404
-asattack.bin | 2K   | WORKS  | 43c7404
-blackjac.bin | 2K   | FAILS  | 43c7404
- bowling.bin | 2K   | LOADS  | 43c7404
- capture.bin | 2K   | FAILS  | 43c7404
-carraces.bin | 2K   | LOADS  | 43c7404
-  casino.bin | 2K   | FAILS  | 43c7404
+ 4inarow.bin | 2K   | WORKS  | 533253a
+asattack.bin | 2K   | WORKS  | 533253a
+asbattle.bin | 2K   | WORKS  | 533253a
+backgamn.bin | 4K+1K| WORKS  | 533253a
+blackjac.bin | 2K   | WORKS  | 533253a
+ bowling.bin | 2K   | WORKS  | 533253a
+  boxing.bin | 4K   | WORKS  | 533253a
+ capture.bin | 2K   | WORKS  | 533253a
+carraces.bin | 2K   | WORKS  | 533253a
+  casino.bin | 2K   | WORKS  | 533253a
+  chess1.bin | 4K+1K| WORKS  | 533253a
+  chess2.bin | 6K+1K| FAILS  | 5a9af7a
  codebrk.bin | 2K   | WORKS  | 43c7404
- combata.bin | 2K   | FAILS  | 43c7404
- combatb.bin | 2K   | FAILS  | 43c7404
+ combata.bin | 2K   | WORKS  | 533253a
+ combatb.bin | 2K   | WORKS  | 533253a
   cowboy.bin | 2K   | WORKS  | 43c7404
-grndprix.bin | 2K   | FAILS  | 43c7404
+ draughts.bin| 4K+1K| WORKS  | 533253a
+grndprix.bin | 2K   | WORKS  | 533253a
   headon.bin | 2K   | WORKS  | 43c7404
-hippodro.bin | 2K   | FAILS  | 43c7404
-horsrace.bin | 2K   | LOADS  | 43c7404
+hippodro.bin | 2K   | WORKS  | 533253a
+horsrace.bin | 2K   | WORKS  | 533253a
  hunting.bin | 2K   | WORKS  | 43c7404
-hyprspac.bin | 2K   | FAILS  | 43c7404
+hyprspac.bin | 2K   | WORKS  | 533253a
 invadera.bin | 2K   | WORKS  | 43c7404
 invaderb.bin | 2K   | WORKS  | 43c7404
 knockout.bin | 2K   | WORKS  | 43c7404
 labyrint.bin | 2K   | WORKS  | 43c7404
 laseratt.bin | 2K   | WORKS  | 43c7404
-mathema1.bin | 2K   | FAILS  | 43c7404
-mathema2.bin | 2K   | LOADS  | 43c7404
+mathema1.bin | 2K   | WORKS  | 533253a
+mathema2.bin | 2K   | WORKS  | 533253a
 mmuncher.bin | 2K   | WORKS  | 43c7404
 musicalg.bin | 2K   | WORKS  | 43c7404
 olympics.bin | 2K   | WORKS  | 43c7404
@@ -60,8 +65,8 @@ shootgal.bin | 2K   | WORKS  | 43c7404
 shootout.bin | 2K   | WORKS  | 43c7404
  soccera.bin | 2K   | WORKS  | 43c7404
  soccerb.bin | 2K   | WORKS  | 43c7404
-solitair.bin | 2K   | FAILS  | 43c7404
+solitair.bin | 2K   | WORKS  | 533253a
 spacewar.bin | 2K   | WORKS  | 43c7404
-superinv.bin | 2K   | FAILS  | 43c7404
+superinv.bin | 2K   | WORKS  | 533253a
 suprmaze.bin | 2K   | WORKS  | 43c7404
 treasure.bin | 2K   | WORKS  | 43c7404
