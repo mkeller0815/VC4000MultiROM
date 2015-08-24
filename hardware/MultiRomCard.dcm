@@ -5,6 +5,11 @@ D SRAM 8K x 8
 K SRAM 8Kx8
 $ENDCMP
 #
+$CMP 7SEGM_KB_SC39-11
+D 7 segment LED display
+K Kingbright
+$ENDCMP
+#
 $CMP Arduino_Nano
 D Arduino Nano 3.1 with Atmega 328P
 $ENDCMP
