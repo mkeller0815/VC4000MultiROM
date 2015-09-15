@@ -1,26 +1,25 @@
-#include <SD.h>
-#include <SPI.h>
+#include <SD.h>   // Both includes are needed
+#include <SPI.h>  // for the Arduino SD library.
 
-#define CLOCK          5     // SRCLK
-#define LATCH          3     // RCLK
-#define DATA           6     // SER
-
+// Defines for Arduino port numbers
+#define CLOCK          5     // SRCLK (A/D-Bus Shift Registers)
+#define LATCH          3     // RCLK  (A/D-Bus Shift Registers)
+#define DATA           6     // SER   (A/D-Bus Shift Registers)
+#define OESHIFT        2     // _G    (A/D-Bus Shift Registers)
 #define WESRAM         10
-#define OESHIFT        2     // _G Shift Registers
+#define OEVCBUS        7     // OE for Bus Transceivers
+#define SD_CS          4     // Chip Select for SD card
+#define LED            13
 
-#define OEVCBUS        7
-
-#define SD_CS          4
+// Miscellaneous other defines
 #define FILENAME_SIZE  12    // 8.3 convention, see SD library doc.
 #define MAX_ROM_SIZE   6144
 
-#define LED            13
-
-unsigned blinkTimeHigh = 500;
-unsigned blinkTimeLow = 500;
-
+// Global variables
 char romName[FILENAME_SIZE + 1];
 File romFile;
+unsigned blinkTimeHigh = 500;
+unsigned blinkTimeLow = 500;
 
 void setup() {
   pinMode(SD_CS, OUTPUT);
@@ -51,7 +50,6 @@ void setup() {
 
   // Write ROM file to SRAM
   if (romFile) {
-    //enableSRAM();
     unsigned romSize = static_cast<unsigned>(romFile.size());
     if (romSize <= MAX_ROM_SIZE) {
       for (unsigned i = 0; i < romSize; i++) {
@@ -69,8 +67,7 @@ void setup() {
     blinkTimeHigh = 50;
     blinkTimeLow = 200;
   }
-
-  SPI.end();  // Disable SPI bus to regain control over the pins.
+  SPI.end();  // Otherwise on-board LED does not work!
 }
 
 void loop() {
@@ -80,13 +77,6 @@ void loop() {
   digitalWrite(LED, LOW);
   delay(blinkTimeLow);
 }
-
-/*void enableSRAM() {
-  pinMode(CE1SRAM, OUTPUT);
-  pinMode(CE2SRAM, OUTPUT);
-  digitalWrite(CE1SRAM, LOW);
-  digitalWrite(CE2SRAM, HIGH);
-}*/
 
 void disableVCBus() {
   digitalWrite(WESRAM, HIGH);
