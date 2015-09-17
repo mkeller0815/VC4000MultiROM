@@ -30,7 +30,7 @@ File romFile;
 unsigned blinkTimeHigh = 500;
 unsigned blinkTimeLow  = 500;
 TM1637Display display(DISPLAY_CLK, DISPLAY_DIO);
-byte displayInitData[] = {0, 0, 0, 0};
+byte displayInitData[] = { 0, 0, 0, 0 };
 
 void setup() {
   pinMode(SD_CS, OUTPUT);
@@ -56,18 +56,19 @@ void setup() {
       ++romNumber;
     else if (key == DOWNKEY && lastkey != DOWNKEY && romNumber > 1)
       --romNumber;
-    display.showNumberDec(romNumber, false, 2, 2);
+    display.showNumberDec(romNumber, true, 2, 2);
     lastkey = key;
     key = getKey(A7);
   } while (key != SELECTKEY);
 
   // Construct ROM file name
-  itoa(romNumber, romName, 10);
-  byte len = strlen(romName);
-  romName[len]   = '.';
-  romName[len+1] = 'b';
-  romName[len+2] = 'i';
-  romName[len+3] = 'n';
+  if (romNumber < 10) {
+    romName[0] = '0';
+    itoa(romNumber, romName+1, 10);
+  } else {
+    itoa(romNumber, romName, 10);
+  }
+  strcpy(romName+2, ".bin");
 
   // Initialize SD card and open ROM file
   if (SD.begin(SD_CS)) {
@@ -140,7 +141,6 @@ void shiftout(unsigned int address, byte data) {
   shiftOut(DATA, CLOCK, MSBFIRST, highbyte);
   shiftOut(DATA, CLOCK, MSBFIRST, lowbyte);
   digitalWrite(LATCH, HIGH);
-  delay(1);
   digitalWrite(LATCH, LOW);
 }
 
