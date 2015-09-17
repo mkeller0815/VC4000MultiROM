@@ -30,6 +30,7 @@ File romFile;
 unsigned blinkTimeHigh = 500;
 unsigned blinkTimeLow  = 500;
 TM1637Display display(DISPLAY_CLK, DISPLAY_DIO);
+byte displayInitData[] = {0, 0, 0, 0};
 
 void setup() {
   pinMode(SD_CS, OUTPUT);
@@ -44,7 +45,8 @@ void setup() {
   // Isolate MultiROM from console bus
   disableVCBus();
 
-  // Enable 7-segment display
+  // Init and enable 7-segment display
+  display.setSegments(displayInitData);
   display.setBrightness(0x0f);
 
   // Wait for user selecting a ROM number
