@@ -1,6 +1,5 @@
 #include <SD.h>
 #include <SPI.h>            // Needed for SD lib
-#include <TM1637Display.h>  // 7-segment driver lib
 
 // Defines for Arduino port numbers
 #define CLOCK          5  // SRCLK (A/D-Bus Shift Registers)
@@ -10,9 +9,13 @@
 #define WESRAM        10
 #define OEVCBUS        7  // OE for Bus Transceivers
 #define SD_CS          4  // Chip Select for SD card
-#define DISPLAY_CLK   A4  // 7-segment display
-#define DISPLAY_DIO   A5  // 7-segment display
 #define LED           13
+
+#define DISP_OE A2        // 7-segment display
+#define DISP_LATCH A3     // 7-segment display
+#define DISP_CLK A4       // 7-segment display
+#define DISP_DATA A5      // 7-segment display
+
 
 // Miscellaneous other defines
 #define NOKEY           0
@@ -29,8 +32,8 @@ char romName[] = { 0, 0, 0, 0, 0, 0, 0 };
 File romFile;
 unsigned blinkTimeHigh = 500;
 unsigned blinkTimeLow  = 500;
-TM1637Display display(DISPLAY_CLK, DISPLAY_DIO);
-byte displayInitData[] = { 0, 0, 0, 0 };
+
+byte digitOne[10]= {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f};
 
 void setup() {
   pinMode(SD_CS, OUTPUT);
@@ -42,13 +45,18 @@ void setup() {
   pinMode(OEVCBUS, OUTPUT);
   pinMode(LED, OUTPUT);
 
+  pinMode(DISP_LATCH, OUTPUT);
+  pinMode(DISP_CLK, OUTPUT);
+  pinMode(DISP_DATA, OUTPUT);
+  pinMode(DISP_OE, OUTPUT);
+  digitalWrite(DISP_OE,LOW);
+
   // Isolate MultiROM from console bus
   disableVCBus();
 
   // Init and enable 7-segment display
-  display.setSegments(displayInitData);
-  display.setBrightness(0x0f);
-
+  dispShowNumber(romNumber);
+  
   // Wait for user selecting a ROM number
   byte key = getKey(A7);
   do {
@@ -56,7 +64,7 @@ void setup() {
       ++romNumber;
     else if (key == DOWNKEY && lastkey != DOWNKEY && romNumber > 1)
       --romNumber;
-    display.showNumberDec(romNumber, true, 2, 2);
+    dispShowNumber(romNumber);
     lastkey = key;
     key = getKey(A7);
   } while (key != SELECTKEY);
@@ -155,4 +163,14 @@ byte getKey(int pin) {
   if (v < 100)
     return UPKEY;
   return NOKEY;
+}
+
+void dispShowNumber(byte num) {
+  byte i = num % 10;
+  byte j = (num - i) / 10;
+      digitalWrite(DISP_LATCH, LOW);
+      shiftOut(DISP_DATA, DISP_CLK, MSBFIRST, digitOne[i]); // digitTwo
+      shiftOut(DISP_DATA, DISP_CLK, MSBFIRST, digitOne[j]); // digitOne
+      digitalWrite(DISP_LATCH, HIGH);
+  
 }
