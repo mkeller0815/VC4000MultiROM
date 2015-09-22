@@ -5,7 +5,7 @@
 
 
 //This is the hex value of each number stored in an array by index num
-byte digitOne[10]= {0x3F, 0x06, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
+byte digitOne[10]= {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f};
 
 int i;
 
@@ -20,13 +20,19 @@ void setup(){
 
 void loop(){
  
-  for(int i=0; i<10; i++){
-    for(int j=0; j<10; j++){
-      digitalWrite(LATCH, LOW);
-      shiftOut(DATA, CLK, LSBFIRST, ~digitOne[i]); // digitTwo
-      shiftOut(DATA, CLK, LSBFIRST, ~digitOne[j]); // digitOne
-      digitalWrite(LATCH, HIGH);
-      delay(500);
-    }
+  for(int i=0; i<100; i++){
+    showNumber(i);    
+    delay(100);
   }
+}
+
+
+void showNumber(byte num) {
+  byte i = num % 10;
+  byte j = (num - i) / 10;
+      digitalWrite(LATCH, LOW);
+      shiftOut(DATA, CLK, MSBFIRST, digitOne[i]); // digitTwo
+      shiftOut(DATA, CLK, MSBFIRST, digitOne[j]); // digitOne
+      digitalWrite(LATCH, HIGH);
+  
 }
