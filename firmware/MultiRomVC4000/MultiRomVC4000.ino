@@ -11,11 +11,10 @@
 #define SD_CS          4  // Chip Select for SD card
 #define LED           13
 
-#define DISP_OE A2        // 7-segment display
-#define DISP_LATCH A3     // 7-segment display
-#define DISP_CLK A4       // 7-segment display
-#define DISP_DATA A5      // 7-segment display
-
+#define DISP_OE       A2  // 7-segment display
+#define DISP_LATCH    A3  // 7-segment display
+#define DISP_CLK      A4  // 7-segment display
+#define DISP_DATA     A5  // 7-segment display
 
 // Miscellaneous other defines
 #define NOKEY           0
@@ -24,16 +23,31 @@
 #define SELECTKEY       3
 #define MAX_ROMS       99
 #define MAX_ROM_SIZE 6144
+#define GO_MSG          9  // 7-segment Message offset
+#define ER_MSG         11  // 7-segment Message offset
 
 // Global variables
 byte lastkey = NOKEY;
+byte message = GO_MSG;
 byte romNumber = 1;
 char romName[] = { 0, 0, 0, 0, 0, 0, 0 };
 File romFile;
-unsigned blinkTimeHigh = 500;
-unsigned blinkTimeLow  = 500;
 
-byte digitOne[10]= {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f};
+byte SevenSegChar[]= {
+  0x3f,  // 0
+  0x06,  // 1
+  0x5b,  // 2
+  0x4f,  // 3
+  0x66,  // 4
+  0x6d,  // 5
+  0x7d,  // 6
+  0x07,  // 7
+  0x7f,  // 8
+  0x6f,  // 9
+  0x63,  // o
+  0x79,  // E
+  0x50   // r
+};
 
 void setup() {
   pinMode(SD_CS, OUTPUT);
@@ -54,32 +68,33 @@ void setup() {
   // Isolate MultiROM from console bus
   disableVCBus();
 
-  // Init and enable 7-segment display
-  dispShowNumber(romNumber);
-  
-  // Wait for user selecting a ROM number
-  byte key = getKey(A7);
-  do {
-    if (key == UPKEY && lastkey != UPKEY && romNumber < MAX_ROMS)
-      ++romNumber;
-    else if (key == DOWNKEY && lastkey != DOWNKEY && romNumber > 1)
-      --romNumber;
-    dispShowNumber(romNumber);
-    lastkey = key;
-    key = getKey(A7);
-  } while (key != SELECTKEY);
-
-  // Construct ROM file name
-  if (romNumber < 10) {
-    romName[0] = '0';
-    itoa(romNumber, romName+1, 10);
-  } else {
-    itoa(romNumber, romName, 10);
-  }
-  strcpy(romName+2, ".bin");
-
-  // Initialize SD card and open ROM file
+  // Initialize SD card
   if (SD.begin(SD_CS)) {
+    // Init 7-segment display
+    dispShowNumber(romNumber);
+
+    // Wait for user selecting a ROM number
+    byte key = getKey(A7);
+    do {
+      if (key == UPKEY && lastkey != UPKEY && romNumber < MAX_ROMS)
+        ++romNumber;
+      else if (key == DOWNKEY && lastkey != DOWNKEY && romNumber > 1)
+        --romNumber;
+      dispShowNumber(romNumber);
+      lastkey = key;
+      key = getKey(A7);
+    } while (key != SELECTKEY);
+
+    // Construct ROM file name
+    if (romNumber < 10) {
+      romName[0] = '0';
+      itoa(romNumber, romName+1, 10);
+    } else {
+      itoa(romNumber, romName, 10);
+    }
+    strcpy(romName+2, ".bin");
+
+    // Open ROM file
     romFile = SD.open(romName);
 
     // Write ROM file to SRAM
@@ -91,30 +106,23 @@ void setup() {
         }
       } else {
         // ROM size too big.
-        blinkTimeHigh =   50;
-        blinkTimeLow  = 1000;
+        message = ER_MSG;
       }
       romFile.close();
       enableVCBus();
     } else {
       // ROM file could not be opened.
-      blinkTimeHigh =  50;
-      blinkTimeLow  = 200;
+      message = ER_MSG;
     }
   } else {
     // SD card not found or otherwise failing initialization
-    blinkTimeHigh = 50;
-    blinkTimeLow  = 50;
+    message = ER_MSG;
   }
-  SPI.end();  // Otherwise on-board LED does not work!
 }
 
 void loop() {
   // Status indication
-  digitalWrite(LED, HIGH);
-  delay(blinkTimeHigh);
-  digitalWrite(LED, LOW);
-  delay(blinkTimeLow);
+  dispMessage(message);
 }
 
 void disableVCBus() {
@@ -168,9 +176,15 @@ byte getKey(int pin) {
 void dispShowNumber(byte num) {
   byte i = num % 10;
   byte j = (num - i) / 10;
-      digitalWrite(DISP_LATCH, LOW);
-      shiftOut(DISP_DATA, DISP_CLK, MSBFIRST, digitOne[i]); // digitTwo
-      shiftOut(DISP_DATA, DISP_CLK, MSBFIRST, digitOne[j]); // digitOne
-      digitalWrite(DISP_LATCH, HIGH);
-  
+  digitalWrite(DISP_LATCH, LOW);
+  shiftOut(DISP_DATA, DISP_CLK, MSBFIRST, SevenSegChar[i]); // digitTwo
+  shiftOut(DISP_DATA, DISP_CLK, MSBFIRST, SevenSegChar[j]); // digitOne
+  digitalWrite(DISP_LATCH, HIGH);
+}
+
+void dispMessage(byte offset) {
+  digitalWrite(DISP_LATCH, LOW);
+  shiftOut(DISP_DATA, DISP_CLK, MSBFIRST, SevenSegChar[offset+1]);
+  shiftOut(DISP_DATA, DISP_CLK, MSBFIRST, SevenSegChar[offset]);
+  digitalWrite(DISP_LATCH, HIGH);
 }
