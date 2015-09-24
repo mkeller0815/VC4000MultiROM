@@ -9,7 +9,6 @@
 #define WESRAM        10
 #define OEVCBUS        7  // OE for Bus Transceivers
 #define SD_CS          4  // Chip Select for SD card
-#define LED           13
 
 #define DISP_OE       A2  // 7-segment display
 #define DISP_LATCH    A3  // 7-segment display
@@ -32,7 +31,6 @@ byte message = GO_MSG;
 byte romNumber = 1;
 char romName[] = { 0, 0, 0, 0, 0, 0, 0 };
 File romFile;
-
 byte SevenSegChar[]= {
   0x3f,  // 0
   0x06,  // 1
@@ -44,9 +42,9 @@ byte SevenSegChar[]= {
   0x07,  // 7
   0x7f,  // 8
   0x6f,  // 9
-  0x63,  // o
-  0x79,  // E
-  0x50   // r
+  0x63,  // o \
+  0x79,  // E  |- Additional characters for status messages
+  0x50   // r /
 };
 
 void setup() {
@@ -57,23 +55,21 @@ void setup() {
   pinMode(WESRAM, OUTPUT);
   pinMode(OESHIFT, OUTPUT);
   pinMode(OEVCBUS, OUTPUT);
-  pinMode(LED, OUTPUT);
-
   pinMode(DISP_LATCH, OUTPUT);
   pinMode(DISP_CLK, OUTPUT);
   pinMode(DISP_DATA, OUTPUT);
   pinMode(DISP_OE, OUTPUT);
-  digitalWrite(DISP_OE,LOW);
 
   // Isolate MultiROM from console bus
   disableVCBus();
 
+  // Enable 7-segment display
+  digitalWrite(DISP_OE,LOW);
+
   // Initialize SD card
   if (SD.begin(SD_CS)) {
-    // Init 7-segment display
-    dispShowNumber(romNumber);
-
     // Wait for user selecting a ROM number
+    dispShowNumber(romNumber);
     byte key = getKey(A7);
     do {
       if (key == UPKEY && lastkey != UPKEY && romNumber < MAX_ROMS)
@@ -92,7 +88,7 @@ void setup() {
     } else {
       itoa(romNumber, romName, 10);
     }
-    strcpy(romName+2, ".bin");
+    strcpy(romName+2, ".bin");  // Append filename extension
 
     // Open ROM file
     romFile = SD.open(romName);
