@@ -1,5 +1,6 @@
 # Kicad temporary files #
 #########################
+_autosave-*
 *.bak
 *-bak
 *.bck
