@@ -21,7 +21,7 @@
 #define DOWNKEY         2
 #define SELECTKEY       3
 #define MAX_ROMS       99
-#define MAX_ROM_SIZE 6144
+#define MAX_ROM_SIZE 8192
 #define GO_MSG          9  // 7-segment Message offset
 #define ER_MSG         11  // 7-segment Message offset
 
