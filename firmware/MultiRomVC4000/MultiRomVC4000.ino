@@ -141,6 +141,7 @@ void write2RAM(unsigned int address, byte data) {
   digitalWrite(WESRAM, HIGH);
   shiftout(address, data);
   digitalWrite(WESRAM, LOW);
+  delay(1);
   digitalWrite(WESRAM, HIGH);
 }
 
