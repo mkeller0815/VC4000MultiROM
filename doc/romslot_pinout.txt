@@ -1,0 +1,70 @@
+############################################################################
+#                                                                          #
+# Interton VC 4000 - pinout of the ROM slot                                #
+#                                                                          #
+############################################################################
+
+This picture shows the pinout from a front view of the console
+
+|                                                                          |
+|       D D D G D D D D D A A C A P A A + A A A A A A A A O / W G +        |
+|       0 1 2 N 3 4 5 6 7 1 1 E 1 V 9 8 5 0 1 2 3 4 5 6 7 P R R N 5        |
+|             D           1 0 1 2 I     V                 R W P D V        |
+|                                                                          |
+|       # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #      |
++----+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  +---+
+     |  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  |
+     |  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  |
+  01 |  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  | 31
+     +-----------------------------------------------------------------+
+
+
+
+This picture shows the pinout from a top view of the console
+
+     +-------+                                                 +-------+
+     |       +-------------------------------------------------+       |
+     |                                                                 |
+     |  D D D G D D D D D A A C A P A A + A A A A A A A A O / W G +    |
+     |  0 1 2 N 3 4 5 6 7 1 1 E 1 V 9 8 5 0 1 2 3 4 5 6 7 P R R N 5    |
+     |        D           1 0 1 2 I     V                 R W P D V    |
+     |                                                                 |
+  01 |  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  | 31
+     |                                                                 |
+     |  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  |
+     |                                                                 |
+     +-----------------------------------------------------------------+
+
+
+01	D0     \
+02	D1     |
+03	D2     |
+04	GND    \
+05	D3      >  data bus + GND on pin 4
+06	D4     /
+07	D5     |
+08	D6     |
+09	D7    /
+
+10	A11
+11	A10
+12	CE1		
+13	A12
+14	PVI Sel		this is internal connected to A11 of the S2636 chip
+15	A9
+16	A8
+17	+5V
+18	A0
+19	A1
+20	A2
+21	A3
+22	A4
+23	A5
+24	A6
+25	A7
+26	OPREQ 		S2650 signal that is connected to the OPREQ input of the S2636	
+27	/RW		/READ - WRITE signal
+28	WRP S2650	Write pulse genreated by S2650
+29	GND
+30	+5V
+31	NA
