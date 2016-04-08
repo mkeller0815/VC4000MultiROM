@@ -13,6 +13,6 @@ The Printouts folder contains PDF plots of the schematic and of the two current
 PCB copper layers.  They can be used to create a double sided PCB with DIY
 methods like toner transfer.
 
-![Schematic] (https://github.com/mkeller0815/VC4000MultiROM/blob/master/hardware/MultiRomCard.svg)
+![Schematic] (https://rawgithub.com/mkeller0815/VC4000MultiROM/master/hardware/MultiRomCard.svg)
 
-![PCB] (https://github.com/mkeller0815/VC4000MultiROM/blob/master/hardware/MultiRomCard-brd.svg)
+![PCB] (https://rawgithub.com/mkeller0815/VC4000MultiROM/master/hardware/MultiRomCard-brd.svg)
