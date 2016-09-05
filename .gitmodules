@@ -1,0 +1,3 @@
+[submodule "tm1637"]
+    path = firmware/libaries/TM1637
+    url = https://github.com/avishorp/TM1637
