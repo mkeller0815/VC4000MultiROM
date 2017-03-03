@@ -1017,17 +1017,6 @@ F 3 "" H 2500 4650 60  0000 C CNN
 	1    2500 4650
 	0    1    1    0   
 $EndComp
-$Comp
-L CONN_01X06 P3
-U 1 1 55D05CFD
-P 1300 3700
-F 0 "P3" H 1300 4050 50  0000 C CNN
-F 1 "DISPLAY" V 1400 3700 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06" H 1300 3700 60  0001 C CNN
-F 3 "" H 1300 3700 60  0000 C CNN
-	1    1300 3700
-	1    0    0    -1  
-$EndComp
 Text Notes 1150 4150 0    60   ~ 0
 R2R Ladder - Select Buttons
 $Comp
@@ -1271,50 +1260,6 @@ F 2 "" H 2300 5150 60  0000 C CNN
 F 3 "" H 2300 5150 60  0000 C CNN
 	1    2300 5150
 	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_01X02 P4
-U 1 1 55D573CF
-P 850 5650
-F 0 "P4" H 850 5800 50  0000 C CNN
-F 1 "JUMPER1" V 950 5650 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 850 5650 60  0001 C CNN
-F 3 "" H 850 5650 60  0000 C CNN
-	1    850  5650
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONN_01X02 P5
-U 1 1 55D57846
-P 850 6150
-F 0 "P5" H 850 6300 50  0000 C CNN
-F 1 "JUMPER2" V 950 6150 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 850 6150 60  0001 C CNN
-F 3 "" H 850 6150 60  0000 C CNN
-	1    850  6150
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONN_01X02 P6
-U 1 1 55D578F4
-P 850 6650
-F 0 "P6" H 850 6800 50  0000 C CNN
-F 1 "JUMPER3" V 950 6650 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 850 6650 60  0001 C CNN
-F 3 "" H 850 6650 60  0000 C CNN
-	1    850  6650
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONN_01X02 P7
-U 1 1 55D579DD
-P 850 7150
-F 0 "P7" H 850 7300 50  0000 C CNN
-F 1 "JUMPER4" V 950 7150 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 850 7150 60  0001 C CNN
-F 3 "" H 850 7150 60  0000 C CNN
-	1    850  7150
-	-1   0    0    1   
 $EndComp
 NoConn ~ 4000 7500
 $Comp
@@ -1787,8 +1732,6 @@ Wire Wire Line
 	1400 4300 1600 4300
 Wire Wire Line
 	1900 4300 2100 4300
-Wire Wire Line
-	1050 4950 2500 4950
 Connection ~ 2000 4950
 Connection ~ 9400 6400
 Connection ~ 2500 4950
@@ -1809,42 +1752,22 @@ Wire Wire Line
 Wire Wire Line
 	750  2950 750  5200
 Wire Wire Line
-	750  3750 1100 3750
-Wire Wire Line
 	900  2850 700  2850
 Wire Wire Line
-	700  2850 700  5950
-Wire Wire Line
-	700  3650 1100 3650
+	700  2850 700  6200
 Wire Wire Line
 	900  2750 650  2750
 Wire Wire Line
-	650  2750 650  6450
-Wire Wire Line
-	650  3550 1100 3550
-Wire Wire Line
-	900  2650 600  2650
-Wire Wire Line
-	600  2650 600  6950
-Wire Wire Line
-	600  3450 1100 3450
+	650  2750 650  6700
 Wire Wire Line
 	6700 4000 6700 4200
 Connection ~ 6700 4100
 Wire Wire Line
 	6850 3850 6850 3950
 Wire Wire Line
-	950  3850 1100 3850
-Wire Wire Line
-	1050 3950 1100 3950
-Wire Wire Line
 	850  3150 850  4200
 Wire Wire Line
 	850  4200 1500 4200
-Wire Wire Line
-	950  3850 950  4550
-Wire Wire Line
-	1050 3950 1050 4950
 Connection ~ 1500 4950
 Wire Wire Line
 	1250 5050 1250 4950
@@ -1943,53 +1866,21 @@ Wire Wire Line
 Wire Wire Line
 	2100 5800 2100 7200
 Wire Wire Line
-	1050 7200 2600 7200
+	600  7200 2600 7200
 Connection ~ 2300 5500
 Wire Wire Line
-	1050 6200 2400 6200
+	700  6200 2400 6200
 Connection ~ 2400 6200
 Wire Wire Line
-	2600 5200 1400 5200
-Wire Wire Line
-	1400 5200 1400 5700
-Wire Wire Line
-	1400 5700 1050 5700
+	750  5200 2600 5200
 Connection ~ 2100 7200
 Wire Wire Line
 	2100 5800 2600 5800
 Wire Wire Line
-	1050 6700 2200 6700
+	650  6700 2200 6700
 Connection ~ 2200 6700
 Wire Wire Line
 	950  4300 1100 4300
-Wire Wire Line
-	750  5200 1100 5200
-Wire Wire Line
-	1100 5200 1100 5600
-Wire Wire Line
-	1100 5600 1050 5600
-Connection ~ 750  3750
-Wire Wire Line
-	700  5950 1100 5950
-Wire Wire Line
-	1100 5950 1100 6100
-Wire Wire Line
-	1100 6100 1050 6100
-Connection ~ 700  3650
-Wire Wire Line
-	650  6450 1100 6450
-Wire Wire Line
-	1100 6450 1100 6600
-Wire Wire Line
-	1100 6600 1050 6600
-Connection ~ 650  3550
-Wire Wire Line
-	600  6950 1100 6950
-Wire Wire Line
-	1100 6950 1100 7100
-Wire Wire Line
-	1100 7100 1050 7100
-Connection ~ 600  3450
 Wire Bus Line
 	7700 4900 7700 5750
 Wire Bus Line
@@ -2052,4 +1943,12 @@ Wire Wire Line
 	4000 5800 4650 5800
 Wire Wire Line
 	4000 5900 4350 5900
+Wire Wire Line
+	950  4300 950  4550
+Wire Wire Line
+	1250 4950 2500 4950
+Wire Wire Line
+	900  2650 600  2650
+Wire Wire Line
+	600  2650 600  7200
 $EndSCHEMATC
